@@ -7,6 +7,6 @@ import icon from "astro-icon";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://CommunityCommodityComputerCoaching.github.io',
-  base: 'c4.giving',
+  base: '/',
   integrations: [tailwind(), mdx(), sitemap(), icon()],
 });
