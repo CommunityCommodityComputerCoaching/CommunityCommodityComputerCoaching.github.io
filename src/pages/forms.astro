@@ -3,11 +3,31 @@
 // Astro component script section (optional, if needed)
 ---
 <form action="/submit" method="POST">
-  <label for="count">Count:</label>
+
+<!-- name, organization, org address, event address, phone, email -->
+  <label for="name">Contact Name:</label>
   <input type="text" id="name" name="name" required />
 
+  <label for="organization">Organization Name:</label>
+  <input type="text" id="organization" name="organization" required />
+
+  <label for="orgAddress">Organization Address:</label>
+  <input type="text" id="orgAddress" name="orgAddress" required />
+
+  <label for="eventAddress">Event Address</label>
+  <input type="text" id="eventAddress" name="eventAddress" required />
+
+  <label for="phone">Phone:</label>
+  <input type="tel" id="phone" name="phone" required />
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required />
+
+  <label for="count">Count:</label>
+  <input type="text" id="count" name="count" required />
+
   <label for="count">Location:</label>
-  <input type="text" id="name" name="name" required />
+  <input type="text" id="location" name="location" required />
 
   <label for="date">Event Date:</label>
   <input type="date" id="date" name="date" required />
