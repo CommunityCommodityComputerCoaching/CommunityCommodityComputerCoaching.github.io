@@ -18,6 +18,16 @@ import '../styles/styles.css';
 
 <Layout title="">
   <form method="post" action="https://formsubmit.co/dragonginger10@gmail.com">
+
+    <label>Do you want to rent or buy?</label>
+      <div class="toggle-wrapper">
+      <label class="toggle-container">
+        <input type="checkbox" id="toggle-button" />
+        <span class="slider"></span>
+      </label>
+      <label id="rent-or-buy">Rent</label>
+    </div>
+
     <input type="hidden" name="_subject" value="Rental Request">
     <input type="hidden" name="_template" value="table">
 
@@ -27,8 +37,12 @@ import '../styles/styles.css';
 
     <Event id="event-details"/>
 
+    <hr class="separator" />
+      
+    <Event id="event-details"/>
+
     <div id="config">
-      <hr class="separator" />
+      <Event id="event-details"/>
       <Config  />
     </div>
     <button type="submit">Submit</button>
