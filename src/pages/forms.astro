@@ -5,7 +5,7 @@ import Container from "@components/container.astro"
 import Layout from "@layouts/Layout.astro"
 
 
-// Astro componentst section (optional, if needed)
+// Astro components section (optional, if needed)
 import Organization from "@components/organization.astro"
 import Event from "@components/event.astro"
 import Config from "@components/config.astro"
@@ -20,33 +20,46 @@ const notify = "dragonginger10@gmail.com"
 <Layout title="">
   <form method="post" action="https://formsubmit.co/dragonginger10@gmail.com">
 
-    <label class="toggle-container">
-      <input type="checkbox" id="toggle-button" />
-      <span class="slider"></span>
-    </label>
+    <label>Do you want to rent or buy?</label>
+      <div class="toggle-wrapper">
+      <label class="toggle-container">
+        <input type="checkbox" id="toggle-button" />
+        <span class="slider"></span>
+      </label>
+      <label id="rent-or-buy">Rent</label>
+    </div>
 
     <input type="hidden" name="_subject" value="Rental Request">
     <input type="hidden" name="_template" value="table">
 
-    <Organization />
+    <Organization id="organization-details"/>
 
-    <Event />
+    <Event id="event-details"/>
 
-    <Config />
-
+    <div id="config">
+      <Config  />
+    </div>
     <button type="submit">Submit</button>
   </form>
 </Layout>
 
 <script>
-  const toggleButton = document.getElementById('toggle-button');
+  const toggleButton = document.getElementById('toggle-button') as HTMLInputElement;
+  const configOptions = document.getElementById('config');
 
   if (toggleButton) {
     toggleButton.addEventListener('change', () => {
+      configOptions?.classList.toggle('hidden')
       if (toggleButton.checked) {
-        alert('Toggle is ON');
+        const rentOrBuyLabel = document.getElementById('rent-or-buy');
+        if (rentOrBuyLabel) {
+          rentOrBuyLabel.innerText = "Buy";
+        }
       } else {
-        alert('Toggle is OFF');
+        const rentOrBuyLabel = document.getElementById('rent-or-buy');
+        if (rentOrBuyLabel) {
+          rentOrBuyLabel.innerText = "Rent";
+        }
       }
     });
   }
