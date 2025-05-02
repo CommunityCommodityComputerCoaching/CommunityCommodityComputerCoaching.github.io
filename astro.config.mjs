@@ -11,18 +11,24 @@ export default defineConfig({
   integrations: [tailwind(), mdx(), sitemap(), icon()],
   
   server: {
-    host: true
+    host: '0.0.0.0',
+    port: 4321
   },
 
   vite: {
     server: {
-      host: true,
+      host: '0.0.0.0',
       hmr: {
-        host: 'localhost',
-        clientPort: 4321 // local development port for previewing, port 4000 is used for production.
+        clientPort: 4321,
+        host: '0.0.0.0'
       },
-      network: "host",
-      allowedHosts: true
-    },
-  },
+      watch: {
+        usePolling: true
+      },
+      allowedHosts: [
+        '0.0.0.0',
+        '.orb.local'
+      ]
+    }
+  }
 });
