@@ -1,4 +1,57 @@
 .toggle-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Add spacing between the slider and the label */
+}
+
+.toggle-container {
+  position: relative;
+  display: inline-block;
+  width: 80px; /* Width of the toggle */
+  height: 30px; /* Height of the toggle */
+}
+
+.toggle-container input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 24px;
+  width: 24px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #007BFF;
+}
+
+input:checked + .slider:before {
+  transform: translateX(50px);
+}
+
+#rent-or-buy {
+  font-size: 16px;
+  color: #333;
     display: flex;
     align-items: center;
     gap: 10px; /* Add spacing between the slider and the label */
@@ -55,80 +108,107 @@
   }
 
 form {
-max-width: 500px;
-margin: 0 auto;
-padding: 20px;
-border: 1px solid #ccc;
-border-radius: 8px;
-background-color: #f9f9f9;
-font-family: Arial, sans-serif;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
 }
 
 label {
-display: block;
-margin-bottom: 8px;
-font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
 }
 
 input, textarea, button, select {
-width: 100%;
-padding: 10px;
-margin-bottom: 16px;
-border: 1px solid #ccc;
-border-radius: 4px;
-font-size: 14px;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
 }
 
 textarea {
-resize: vertical;
+  resize: vertical;
 }
 
 fieldset {
-border: none;
-margin-bottom: 16px;
+  border: none;
+  margin-bottom: 16px;
 }
 
 legend {
-font-weight: bold;
-margin-bottom: 8px;
+  font-weight: bold;
+  margin-bottom: 8px;
 }
 
 button {
-background-color: white;
-color: white;
-border: none;
-cursor: pointer;
+  background-color: white;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
 button:hover {
-background-color: white;
+  background-color: white;
 }
 
 /* Style for inline selects */
 .inline-selects {
-display: flex;
-gap: 10px;
-align-items: center;
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
 .inline-selects label {
-margin-bottom: 0;
-font-weight: normal;
+  margin-bottom: 0;
+  font-weight: normal;
 }
 
 .inline-selects select {
-width: auto;
-flex: 1;
+  width: auto;
+  flex: 1;
 }
 
 /* Style for inline radio buttons */
 .inline-radios {
-display: flex;
-gap: 10px;
-align-items: center;
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
 .inline-radios label {
+  margin-bottom: 0;
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  white-space: nowrap; /* Prevent text wrapping */
+  gap: 5px;    /* Add spacing between the radio button and the text */
+}
+
+.inline-radios input[type="radio"] {
+  margin: 0;    /* Remove default margin for consistent alignment */
+}
+
+.hidden {
+  display: none;
+}
+
+.component-header h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.separator {
+  border: none;
+  border-top: 2px solid black; /* Black separation bar */
+  margin: 20px 0; /* Add spacing above and below the bar */
 margin-bottom: 0;
 font-weight: normal;
 }
