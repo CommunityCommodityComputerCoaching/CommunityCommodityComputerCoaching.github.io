@@ -6,45 +6,26 @@ import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 
 const menuitems = [
     {
-      title: "Rent For Events",
-      path: "/rent",
+      title: "Rent a Chromebook",
+      path: "/services",
     },
     {
-      title: "Chromebooks",
-      path: "/pricing",
+      title: "About Us",
+      children: [
+        { title: "Mission", path: "/mission" },
+        { title: "About", path: "/about" },
+      ],
     },
-   {
-     title: "Mission",
-     path: "/mission",
-   },
-   {
-      title: "Forms",
-      path: "/forms",
-   },
-  {
-    title: "About",
-    path: "/about",
-  },
-  {
-    title: "FAQ",
-    path: "/faq",
-  },
-  {
-    title: "Documentation",
-    path: "/documentation",
-  },
- {
-   title: "Contact",
-   path: "/contact",
- },
- {
-    title: "Donate",
-    path: "/donate",
- },
- {
-    title: "Internships",
-    path: "/internships",
- }
+    {
+      title: "Resources",
+      children: [
+        { title: "Forms", path: "/forms" },
+      ],
+    },
+    {
+      title: "Contact",
+      path: "/contact",
+    },
 ];
 ---
 
