@@ -1,0 +1,69 @@
+---
+import { getCollection } from "astro:content";
+import { Picture } from "astro:assets";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import { Picture } from "astro:assets";
+import heroImage from "assets/rental_logo.png";
+---
+<Layout title="Rent">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Rentals</Fragment>
+      <Fragment slot="desc">For Nonprofits</Fragment>
+    </Sectionhead>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chromebook Rentals for Nonprofits</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 20px;
+    }
+    ul {
+        margin-left: 20px;
+        padding-left: 40px; /* Increase padding-left to ensure bullet points show */
+        list-style-type: disc; /* Ensure bullets are displayed */
+    }
+    li {
+        margin-bottom: 10px;
+    }
+    .logo-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .logo {
+        width: 256px;
+        height: 256px;
+    }
+</style>
+
+</head>
+<body>
+    <div class="logo-container">
+        <Picture class="logo" src={heroImage} alt="Rental image" />
+    </div>
+    <ul>
+        <li><strong>Cost-effectiveness:</strong> Renting is generally more cost-effective for short-term needs, especially if the event is not frequent. The upfront cost of purchasing Chromebooks can be high, whereas renting allows nonprofits to only pay for the time they need the devices.</li>
+        <li><strong>Flexibility:</strong> Renting provides flexibility in terms of the number of devices needed. Nonprofits can rent the exact number of Chromebooks required for the event, without having to invest in a large number of devices that may not be used frequently.</li>
+        <li><strong>Maintenance and Support:</strong> When renting, the responsibility for maintenance and support typically falls on the rental company. This can be beneficial for nonprofits that may not have the resources or expertise to manage and troubleshoot a fleet of Chromebooks.</li>
+        <li><strong>Up-to-date Technology:</strong> Rental companies often provide the latest models of Chromebooks, ensuring that nonprofits have access to the most up-to-date technology for their events.</li>
+        <li><strong>No Storage and Security Concerns:</strong> Renting eliminates the need for nonprofits to store and secure the Chromebooks when not in use, which can be a concern for organizations with limited space or security measures.</li>
+        <li><strong>Easier Budgeting:</strong> Renting can be easier to budget for, as the costs are predictable and usually spread out over time, rather than requiring a large upfront investment.</li>
+        <li><strong>Access to Additional Services:</strong> Some rental companies offer additional services such as setup, configuration, and on-site support, which can be beneficial for nonprofits during events.</li>
+        <li><strong>Scalability:</strong> Renting allows nonprofits to scale up or down the number of devices they need based on the size and requirements of each event.</li>
+        <li><strong>Environmental Considerations:</strong> Renting can also be seen as a more environmentally friendly option, as it reduces the need for the production of new devices and the disposal of old ones.</li>
+        <li><strong>Avoiding Obsolescence:</strong> Technology, including Chromebooks, can become outdated quickly. Renting can help nonprofits avoid the issue of owning obsolete technology, as they can rent newer models as needed.</li>
+    </ul>
+    <p>In summary, renting Chromebooks can provide a more cost-effective, flexible, and hassle-free solution for nonprofits that need devices for infrequent events.</p>
+</body>
+</html>
+  </Container>
+</Layout>

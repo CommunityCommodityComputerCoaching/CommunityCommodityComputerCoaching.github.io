@@ -5,24 +5,18 @@ import Navbar from "@components/navbar/navbar.astro";
 import "@fontsource-variable/inter/index.css";
 import '@fontsource-variable/bricolage-grotesque';
 
-
-
 export interface Props {
   title: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
-
-const resolvedImageWithDomain = new URL(
-  "/opengraph.jpg",
-  Astro.site
-).toString();
+const resolvedImageWithDomain = new URL("/opengraph.png", Astro.site).toString();
 
 const { title } = Astro.props;
 
 const makeTitle = title
   ? title + " | " + "c4giving"
-  : "c4giving - Starter Template for Astro with Tailwind CSS";
+  : "c4giving";
 ---
 
 <!DOCTYPE html>
@@ -33,7 +27,6 @@ const makeTitle = title
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
       title={makeTitle}
       description="c4giving is a starter website template for Astro built with TailwindCSS."
@@ -47,7 +40,7 @@ const makeTitle = title
         basic: {
           url: canonicalURL,
           type: "website",
-          title: `c4giving - Starter Template for Astro`,
+          title: makeTitle,
           image: resolvedImageWithDomain,
         },
         image: {
@@ -61,8 +54,6 @@ const makeTitle = title
     <slot />
     <Footer />
     <style is:global>
-      /* Improve Page speed */
-      /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
       img {
         content-visibility: auto;
       }
