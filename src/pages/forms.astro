@@ -5,7 +5,7 @@ import Container from "@components/container.astro"
 import Layout from "@layouts/Layout.astro"
 
 
-// Astro componentst section (optional, if needed)
+// Astro components section (optional, if needed)
 import Organization from "@components/organization.astro"
 import Event from "@components/event.astro"
 import Config from "@components/config.astro"
@@ -20,33 +20,38 @@ const notify = "dragonginger10@gmail.com"
 <Layout title="">
   <form method="post" action="https://formsubmit.co/dragonginger10@gmail.com">
 
+    <label>Do you want to rent or buy?</label>
     <label class="toggle-container">
       <input type="checkbox" id="toggle-button" />
       <span class="slider"></span>
     </label>
+    <label id="rent-or-buy">Rent</label>
 
     <input type="hidden" name="_subject" value="Rental Request">
     <input type="hidden" name="_template" value="table">
 
-    <Organization />
+    <Organization id="organization-details"/>
 
-    <Event />
+    <Event id="event-details"/>
 
-    <Config />
-
+    <div id="config">
+      <Config  />
+    </div>
     <button type="submit">Submit</button>
   </form>
 </Layout>
 
 <script>
   const toggleButton = document.getElementById('toggle-button');
+  const configOptions = document.getElementById('config');
 
   if (toggleButton) {
     toggleButton.addEventListener('change', () => {
+      configOptions?.classList.toggle('hidden')
       if (toggleButton.checked) {
-        alert('Toggle is ON');
+        document.getElementById('rent-or-buy').innerText = "Buy";
       } else {
-        alert('Toggle is OFF');
+        document.getElementById('rent-or-buy').innerText = "Rent";
       }
     });
   }

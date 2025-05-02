@@ -121,3 +121,7 @@ align-items: center;
 margin-bottom: 0;
 font-weight: normal;
 }
+
+.hidden {
+display: none;
+}
