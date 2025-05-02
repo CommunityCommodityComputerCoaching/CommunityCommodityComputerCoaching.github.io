@@ -4,167 +4,55 @@
 import Container from "@components/container.astro"
 import Layout from "@layouts/Layout.astro"
 
+
+// Astro componentst section (optional, if needed)
+import Organization from "@components/organization.astro"
+import Event from "@components/event.astro"
+import Config from "@components/config.astro"
+
+
+// CSS styles (optional, if needed)
+import '../styles/styles.css';
+
 const notify = "dragonginger10@gmail.com"
 ---
+
 <Layout title="">
   <form method="post" action="https://formsubmit.co/dragonginger10@gmail.com">
+
+    <label class="toggle-container">
+      <input type="checkbox" id="toggle-button" />
+      <span class="slider"></span>
+    </label>
 
     <input type="hidden" name="_subject" value="Rental Request">
     <input type="hidden" name="_template" value="table">
 
-  <!-- name, organization, org address, event address, phone, email -->
-    <label for="name">Contact Name:</label>
-    <input type="text" id="name" name="name" required >
+    <Organization />
 
-    <!-- TODO: Look at open street address API to do address validation -->
-    <label for="organization">Organization Name:</label>
-    <input type="text" id="organization" name="organization" required >
-    
-    <!-- TODO: Look at open street address API to do address validation -->
-    <label for="orgAddress">Organization Address:</label>
-    <input type="text" id="orgAddress" name="orgAddress" required >
+    <Event />
 
-    <label for="eventAddress">Event Address</label>
-    <input type="text" id="eventAddress" name="eventAddress" required >
-
-    <label for="phone">Phone:</label>
-    <input type="tel" id="phone" name="phone" required >
-
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required >
-
-    <label for="count">Count:</label>
-    <input type="text" id="count" name="count" required >
-
-    <label for="date">Event Date:</label>
-    <input type="date" id="date" name="date" required >
-
-    <fieldset>
-      <legend>Deliver/Pick-Up</legend>
-      <div class="inline-radios">
-        <label>
-          <input type="radio" name="deliveryOption" value="rent" required >
-          Deliver
-        </label>
-        <label>
-          <input type="radio" name="deliveryOption" value="purchase" >
-          Pick Up
-        </label>
-      </div>
-    </fieldset>
-
-    <div class="inline-selects">
-      <label for="yes-no">Add Users?</label>
-      <select id="yes-no" name="yesNo" required>
-        <option value="" disabled selected>Select an option</option>
-        <option value="yes">Yes</option>
-        <option value="no">No</option>
-      </select>
-
-      <label for="yes-no">Add to network on site?</label>
-      <select id="yes-no" name="yesNo" required>
-        <option value="" disabled selected>Select an option</option>
-        <option value="yes">Yes</option>
-        <option value="no">No</option>
-      </select>
-    </div>
-
-    <label>Duration</label>
-    <label for="date">Pickup Date:</label>
-    <input type="date" id="date" name="date" required >
-
-    <label for="date">Deliver Date:</label>
-    <input type="date" id="date" name="date" required >
-
-    <label for="dropdown">Device Type:</label>
-    <select id="dropdown" name="dropdown" required>
-      <option value="" disabled selected>Select an option</option>
-      <option value="option1">Laptops</option>
-      <option value="option2">Chrome Base</option>
-      <option value="option3">Tablets</option>
-    </select>
+    <Config />
 
     <button type="submit">Submit</button>
   </form>
 </Layout>
 
+<script>
+  const toggleButton = document.getElementById('toggle-button');
+
+  if (toggleButton) {
+    toggleButton.addEventListener('change', () => {
+      if (toggleButton.checked) {
+        alert('Toggle is ON');
+      } else {
+        alert('Toggle is OFF');
+      }
+    });
+  }
+</script>
+
 <style>
-  form {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    font-family: Arial, sans-serif;
-  }
 
-  label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-  }
 
-  input, textarea, button, select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
-  }
-
-  textarea {
-    resize: vertical;
-  }
-
-  fieldset {
-    border: none;
-    margin-bottom: 16px;
-  }
-
-  legend {
-    font-weight: bold;
-    margin-bottom: 8px;
-  }
-
-  button {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-
-  button:hover {
-    background-color: #0056b3;
-  }
-
-  /* Style for inline selects */
-  .inline-selects {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-  }
-
-  .inline-selects label {
-    margin-bottom: 0;
-    font-weight: normal;
-  }
-
-  .inline-selects select {
-    width: auto;
-    flex: 1;
-  }
-
-  /* Style for inline radio buttons */
-  .inline-radios {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-  }
-
-  .inline-radios label {
-    margin-bottom: 0;
-    font-weight: normal;
-  }
 </style>
