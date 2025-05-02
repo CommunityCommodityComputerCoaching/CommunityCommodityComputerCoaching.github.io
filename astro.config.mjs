@@ -9,4 +9,26 @@ export default defineConfig({
   site: 'https://CommunityCommodityComputerCoaching.github.io',
   base: '/',
   integrations: [tailwind(), mdx(), sitemap(), icon()],
+  
+  server: {
+    host: '0.0.0.0',
+    port: 4321
+  },
+
+  vite: {
+    server: {
+      host: '0.0.0.0',
+      hmr: {
+        clientPort: 4321,
+        host: '0.0.0.0'
+      },
+      watch: {
+        usePolling: true
+      },
+      allowedHosts: [
+        '0.0.0.0',
+        '.orb.local'
+      ]
+    }
+  }
 });

@@ -1,0 +1,58 @@
+---
+// filepath: c:\Dev\DSMHack\CommunityCommodityComputerCoaching.github.io\src\components\Form.astro
+// Astro component script section (optional, if needed)
+import Container from "@components/container.astro"
+import Layout from "@layouts/Layout.astro"
+
+
+// Astro componentst section (optional, if needed)
+import Organization from "@components/organization.astro"
+import Event from "@components/event.astro"
+import Config from "@components/config.astro"
+
+
+// CSS styles (optional, if needed)
+import '../styles/styles.css';
+
+const notify = "dragonginger10@gmail.com"
+---
+
+<Layout title="">
+  <form method="post" action="https://formsubmit.co/dragonginger10@gmail.com">
+
+    <label class="toggle-container">
+      <input type="checkbox" id="toggle-button" />
+      <span class="slider"></span>
+    </label>
+
+    <input type="hidden" name="_subject" value="Rental Request">
+    <input type="hidden" name="_template" value="table">
+
+    <Organization />
+
+    <Event />
+
+    <Config />
+
+    <button type="submit">Submit</button>
+  </form>
+</Layout>
+
+<script>
+  const toggleButton = document.getElementById('toggle-button');
+
+  if (toggleButton) {
+    toggleButton.addEventListener('change', () => {
+      if (toggleButton.checked) {
+        alert('Toggle is ON');
+      } else {
+        alert('Toggle is OFF');
+      }
+    });
+  }
+</script>
+
+<style>
+
+
+</style>
