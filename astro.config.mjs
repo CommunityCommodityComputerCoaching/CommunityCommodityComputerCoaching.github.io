@@ -19,7 +19,7 @@ export default defineConfig({
       host: true,
       hmr: {
         host: 'localhost',
-        clientPort: 4321 // or another port that's available
+        clientPort: 4321 // local development port for previewing, port 4000 is used for production.
       },
       network: "host",
       allowedHosts: true
