@@ -21,11 +21,13 @@ const notify = "dragonginger10@gmail.com"
   <form method="post" action="https://formsubmit.co/dragonginger10@gmail.com">
 
     <label>Do you want to rent or buy?</label>
-    <label class="toggle-container">
-      <input type="checkbox" id="toggle-button" />
-      <span class="slider"></span>
-    </label>
-    <label id="rent-or-buy">Rent</label>
+      <div class="toggle-wrapper">
+      <label class="toggle-container">
+        <input type="checkbox" id="toggle-button" />
+        <span class="slider"></span>
+      </label>
+      <label id="rent-or-buy">Rent</label>
+    </div>
 
     <input type="hidden" name="_subject" value="Rental Request">
     <input type="hidden" name="_template" value="table">
@@ -42,16 +44,22 @@ const notify = "dragonginger10@gmail.com"
 </Layout>
 
 <script>
-  const toggleButton = document.getElementById('toggle-button');
+  const toggleButton = document.getElementById('toggle-button') as HTMLInputElement;
   const configOptions = document.getElementById('config');
 
   if (toggleButton) {
     toggleButton.addEventListener('change', () => {
       configOptions?.classList.toggle('hidden')
       if (toggleButton.checked) {
-        document.getElementById('rent-or-buy').innerText = "Buy";
+        const rentOrBuyLabel = document.getElementById('rent-or-buy');
+        if (rentOrBuyLabel) {
+          rentOrBuyLabel.innerText = "Buy";
+        }
       } else {
-        document.getElementById('rent-or-buy').innerText = "Rent";
+        const rentOrBuyLabel = document.getElementById('rent-or-buy');
+        if (rentOrBuyLabel) {
+          rentOrBuyLabel.innerText = "Rent";
+        }
       }
     });
   }
