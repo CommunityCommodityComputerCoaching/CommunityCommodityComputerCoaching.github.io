@@ -14,58 +14,23 @@ import Config from "@components/config.astro"
 // CSS styles (optional, if needed)
 import '../styles/styles.css';
 
-const notify = "dragonginger10@gmail.com"
 ---
 
 <Layout title="">
   <form method="post" action="https://formsubmit.co/dragonginger10@gmail.com">
-
-    <label>Do you want to rent or buy?</label>
-      <div class="toggle-wrapper">
-      <label class="toggle-container">
-        <input type="checkbox" id="toggle-button" />
-        <span class="slider"></span>
-      </label>
-      <label id="rent-or-buy">Rent</label>
-    </div>
-
     <input type="hidden" name="_subject" value="Rental Request">
     <input type="hidden" name="_template" value="table">
 
     <Organization id="organization-details"/>
 
+    <hr class="separator" />
+
     <Event id="event-details"/>
 
     <div id="config">
+      <hr class="separator" />
       <Config  />
     </div>
     <button type="submit">Submit</button>
   </form>
 </Layout>
-
-<script>
-  const toggleButton = document.getElementById('toggle-button') as HTMLInputElement;
-  const configOptions = document.getElementById('config');
-
-  if (toggleButton) {
-    toggleButton.addEventListener('change', () => {
-      configOptions?.classList.toggle('hidden')
-      if (toggleButton.checked) {
-        const rentOrBuyLabel = document.getElementById('rent-or-buy');
-        if (rentOrBuyLabel) {
-          rentOrBuyLabel.innerText = "Buy";
-        }
-      } else {
-        const rentOrBuyLabel = document.getElementById('rent-or-buy');
-        if (rentOrBuyLabel) {
-          rentOrBuyLabel.innerText = "Rent";
-        }
-      }
-    });
-  }
-</script>
-
-<style>
-
-
-</style>
