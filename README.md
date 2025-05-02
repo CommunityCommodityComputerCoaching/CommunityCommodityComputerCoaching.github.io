@@ -155,6 +155,24 @@ Any static assets, like images, can be placed in the `public/` directory.
 
 TailwindCSS is already configured in this repo, so you can start using it without any installation.
 
+## Docker Instructions
+
+To build and run the Docker container, follow these steps:
+
+1.  **Build the image:**
+
+    ```bash
+    docker build -t community-commodity-computer-coaching .
+    ```
+
+2.  **Run the container:**
+
+    ```bash
+    docker run -p 4000:4000 community-commodity-computer-coaching
+    ```
+
+    This will start the application and make it accessible at `http://localhost:4000`.
+
 ## Credits
 
 [Hero Illustration](https://www.figma.com/community/file/1108400791662599811) by [Streamline](https://www.streamlinehq.com/)
