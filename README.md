@@ -124,6 +124,13 @@ To build and run the Docker container, follow these steps:
 
     This will start the application and make it accessible at `http://localhost:4000`.
 
+# Adding to **Documentation**
+
+1. Copy the example-doc.md in the [documents directory](src/pages/documents/)
+2. edit the frontmatter (the top part in between the `---`) as needed (title, published, etc.)
+    1. If you don't need an image, simply delete the lines for *image, url and alt*
+3. add to the body of the doc and save the file!
+
 [![Built with Astro](https://astro.badg.es/v1/built-with-astro.svg)](https://astro.build)
 
 Created @ DSM Hack 2025!
