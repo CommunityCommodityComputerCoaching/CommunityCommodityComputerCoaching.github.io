@@ -1,0 +1,78 @@
+---
+import Container from "@components/container.astro";
+import Layout from "@layouts/Layout.astro";
+---
+
+<style>
+.hero-section {
+    background-image: url("../../public/training-hero.jpg"); /* Path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 50vh; /* Restrict height to 50% of the viewport */
+    position: relative; /* Make the section a positioning context */
+}
+
+.hero-section::before {
+    content: ""; /* Required for pseudo-elements */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(23, 68, 121, 0.5); /* Blue overlay with 50% opacity */
+    z-index: 1; /* Ensure the overlay is above the background image */
+}
+
+.content-container {
+    position: relative; /* Ensure content is above the overlay */
+    z-index: 2; /* Place content above the overlay */
+}
+
+.content-container h2 {
+    font-size: 6rem; /* Make the font larger */
+    font-weight: bold; /* Make the text bold */
+    color: white; /* Set the text color to white */
+    margin: 10px 0; /* Add spacing above and below */
+    text-align: center; /* Center the text */
+}
+
+.content-container p {
+    font-weight: bold; /* Make the text bold */
+    color: white; /* Set the text color to white */
+    margin: 10px 0; /* Add spacing above and below */
+    text-align: center; /* Center the text */
+}
+
+.separator {
+    width: 100%; /* Full width of the screen */
+    height: 2px; /* Thickness of the line */
+    background-color: black; /* Solid black line */
+    margin: 20px 0; /* Add spacing above and below the line */
+}
+
+.info-blurb {
+    font-size: 4rem; /* Adjust font size for visibility */
+    margin: 20px 0; /* Add spacing above and below */
+    text-align: center; /* Center the text */
+    font-weight: bold; /* Make the text bold */
+    color: black; /* Ensure the text is visible */
+}
+</style>
+
+<Layout title="">
+    <Container>
+        <main class="w-full">
+            <section class="hero-section w-full flex flex-col justify-center items-center text-center">
+                <div class="white-overlay">
+                    <div class="content-container">
+                        <h2>Fasciliated Training.</h2>
+                        <p>Get advanced training from our experts.</p>
+                    </div>
+                </div>
+            </section>
+            <h3 class="info-blurb">What We Provide</h3>
+            <hr class="separator" />
+        </main>
+    </Container>
+</Layout>

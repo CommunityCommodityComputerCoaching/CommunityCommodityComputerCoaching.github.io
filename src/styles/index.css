@@ -58,7 +58,6 @@
     text-overflow: ellipsis; /* Add ellipsis (...) for overflowing text */
 }
 
-
 .button-container {
     display: flex;
     gap: 10px; /* Add spacing between the buttons */
