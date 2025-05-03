@@ -1,0 +1,25 @@
+---
+import Button from "./ui/button.astro"
+const { title, link, linktext } = Astro.props
+---
+<section id={title}>
+<h2 class="font-bold text-2xl text-gray-800">{title}</h2>
+<div>
+    <p>
+        <slot />
+    </p>
+    {
+        link && (
+            <a href={link}>
+                <Button>{linktext}</Button>
+            </a>
+        )
+    }    
+</div>
+</section>
+
+<style>
+    section {
+        padding-bottom: 2rem;
+    } 
+</style>
