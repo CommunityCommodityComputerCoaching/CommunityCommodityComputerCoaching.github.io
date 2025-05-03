@@ -40,6 +40,11 @@
 
 Building locally by cloning this repo.
 
+## Adding events
+- Open events.json under the public folder
+- Add a new entry into the json list with the start date and time and the end date and time, as well as the event name and increment the id by 1
+- Save and push json file to repo, it should pull the new events in and display them on the calendar
+
 ### 1. Clone the repo
 
 ```bash

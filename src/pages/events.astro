@@ -52,7 +52,7 @@ import '@schedule-x/theme-default/dist/index.css';
     function updateEventList(events) {
         eventListElement.innerHTML = ''; // Clear the existing list
         events
-            .sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime()) // Sort events by start date
+            .sort((a, b) => new Date(a.start).getTime() || 0 - new Date(b.start).getTime() || 0) // Sort events by start date
             .forEach(event => {
                 const listItem = document.createElement('li');
                 listItem.textContent = `${event.title} - ${new Date(event.start).toLocaleString()} to ${new Date(event.end).toLocaleString()}`;
