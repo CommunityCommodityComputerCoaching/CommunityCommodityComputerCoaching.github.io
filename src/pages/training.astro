@@ -58,6 +58,115 @@ import Layout from "@layouts/Layout.astro";
     font-weight: bold; /* Make the text bold */
     color: black; /* Ensure the text is visible */
 }
+
+.image-box {
+    flex: 0 1 auto; /* Allow the boxes to size based on their content */
+    text-align: center; /* Center the text and images inside each box */
+}
+
+.image-box img {
+    width: 100%; /* Make the images responsive */
+    max-width: 18.75rem; /* Limit the maximum width of the images */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Add rounded corners to the images */
+}
+
+.image-box p {
+    margin-top: 10px; /* Add spacing above the text */
+    font-size: 1rem; /* Adjust font size for visibility */
+    font-weight: bold; /* Make the text bold */
+    color: black; /* Ensure the text is visible */
+}
+
+
+.button-container {
+    display: flex;
+    gap: 10px; /* Add spacing between the buttons */
+    margin-top: auto; /* Push the buttons down */
+    align-self: flex-start; /* Align buttons to the left */
+    margin-top: 40px; /* Add spacing between the last <p> and the buttons */
+}
+
+.button-container button {
+    padding: 10px 40px;
+    font-size: 1rem;
+    color: white;
+    background-color: #007BFF; /* Blue background */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: bottom;
+    transition: background-color 0.3s ease;
+}
+
+.button-container button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.button-link {
+    display: inline-block; /* Make the link behave like a button */
+    font-size: 1rem;
+    color: white;
+    background-color: #007BFF; /* Blue background */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none; /* Remove underline */
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-link:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.image-box-left {
+    display: flex; /* Enable flexbox for horizontal alignment */
+    align-items: center; /* Vertically align the content */
+    gap: 20px; /* Add spacing between the image and the text */
+    margin-top: 20px; /* Add spacing above the section */
+}
+
+.hero-image-right {
+    flex: 0 0 auto; /* Prevent the image from stretching */
+    max-width: 650px; /* Increase the maximum width of the image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Add rounded corners to the image */
+}
+
+.training-blurb-right {
+    flex: 1; /* Allow the text container to take up the remaining space */
+    text-align: left; /* Align the text to the left */
+    padding-left: 8rem;
+}
+
+.category-title {
+    font-size: 1.5rem; /* Increase the font size */
+    font-weight: bold; /* Make the text bold */
+    margin-bottom: 10px; /* Add spacing below the title */
+    color: black; /* Ensure the text is visible */
+}
+
+.image-box-right {
+    display: flex; /* Enable flexbox for horizontal alignment */
+    flex-direction: row-reverse; /* Reverse the order of the image and text */
+    align-items: center; /* Vertically align the content */
+    gap: 20px; /* Add spacing between the image and the text */
+    margin-top: 20px; /* Add spacing above the section */
+}
+
+.training-blurb-left {
+    flex: 1; /* Allow the text container to take up the remaining space */
+    text-align: left; /* Align the text to the left */
+    padding-right: 8rem; /* Add padding to the right for spacing */
+}
+
+.hero-image-left {
+    flex: 0 0 auto; /* Prevent the image from stretching */
+    max-width: 650px; /* Increase the maximum width of the image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Add rounded corners to the image */
+}
 </style>
 
 <Layout title="">
@@ -73,6 +182,54 @@ import Layout from "@layouts/Layout.astro";
             </section>
             <h3 class="info-blurb">What We Provide</h3>
             <hr class="separator" />
+
+            <div class="image-box-left">
+                <img class="hero-image-right" src="../../public/training-1.jpg" alt="Training Services" />
+                <div class="training-blurb-right">
+                    <p class="category-title">Build your digital confidence with one of our trainings</p>
+                    <br/>
+                    <p class="category-blurb">
+                        Our technical literacy training program is designed to <br/>
+                        empower participants with the digital skills needed for <br/>
+                        everyday life, job readiness, and personal growth. We <br/>
+                        provide a rented Chromebook for the duration of the <br/>
+                        training—ensuring everyone can participate fully, <br/>
+                        regardless of their current technology access.
+                    </p>
+                    <div class="button-container">
+                    <a href="/contact" class="button-link">
+                        <button>Book a Training</button>
+                    </a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="padding-top: 3rem;" class="image-box-right">
+                <img class="hero-image-left" src="../../public/training-2.jpg" alt="Training Services" />
+                <div class="training-blurb-left">
+                    <p class="category-title">Training Benefits & Takeaways</p>
+                    <br/>
+                    <p style="font-weight: bold;">Basic Chromebook Navigation</p>
+                    <p class="category-blurb">
+                        Understand the ChromeOS interface, use the touchpad <br/>and keyboard, manage tabs and windows, and connect to Wi-Fi.
+                    </p>
+                    <br/>
+                    <p style="font-weight: bold;">Online Safety & Privacy</p>
+                    <p class="category-blurb">
+                        Learn how to create strong passwords, identify phishing attempts, and protect personal information online.
+                    </p>
+                    <br/>
+                    <p style="font-weight: bold;">Google Workspace Tools</p>
+                    <p class="category-blurb">
+                        Get hands-on with Gmail, Google Docs, Drive, and Meet to handle communication, document creation, and collaboration.
+                    </p>
+                    <div class="button-container">
+                    <a href="/contact" class="button-link">
+                        <button>Book a Training</button>
+                    </a>
+                    </div>
+                </div>
+            </div>
         </main>
     </Container>
 </Layout>
