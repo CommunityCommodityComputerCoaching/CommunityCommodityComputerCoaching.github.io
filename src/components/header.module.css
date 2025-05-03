@@ -9,19 +9,19 @@
 
   .whiteOverlay {
     position: absolute;
-    top: 6rem; /* Adjust for padding */
-    left: 6rem; /* Adjust for padding */
-    bottom: 5rem; /* Adjust for padding */
-    width: calc(65% - 3.75rem); /* Subtract padding from both sides */
-    height: calc(75% - 3.125rem); /* Subtract padding from top and bottom */
+    top: 5%; /* Adjust for padding */
+    left: 5%; /* Adjust for padding */
+    bottom: 5%; /* Adjust for padding */
+    width: 90%; /* Take up most of the width */
+    height: 50%; /* Let the content determine the height */
     background-color: white; /* Solid white background */
-    padding: 2.188rem; /* Add padding inside the div */
+    padding: 5%; /* Add padding inside the div */
     z-index: 1; /* Ensure it appears above the background */
     box-sizing: border-box; /* Include padding in width and height calculations */
     border-radius: .938rem; /* Add rounded corners */
     display: flex; /* Enable flexbox for content alignment */
     flex-direction: column; /* Stack content vertically */
-    justify-content: flex-start; /* Align content to the top */
+    justify-content: space-between; /* Distribute space evenly */
     align-items: flex-start; /* Align content to the left */
   }
 
@@ -30,7 +30,7 @@
     display: flex;
     flex-direction: column;
     gap: .625rem; /* Add spacing between elements */
-    height: 100%; /* Ensure the container takes full height */
+    height: auto; /* Adjust height to content */
   }
 
   .contentContainer p {
@@ -47,12 +47,48 @@
     color: black; /* Ensure the text is visible */
   }
 
+  @media (max-width: 768px) {
+    .whiteOverlay {
+      padding: 3%;
+      top: 3%;
+      left: 3%;
+      bottom: 3%;
+      width: 94%;
+      height: 50%; /* Changed to auto */
+    }
+
+    .contentContainer h2 {
+      font-size: 1.5rem;
+    }
+
+    .contentContainer p {
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .whiteOverlay {
+      padding: 2%;
+      top: 2%;
+      left: 2%;
+      bottom: 2%;
+      width: 96%;
+      height: 40%; /* Changed to auto */
+    }
+
+    .contentContainer h2 {
+      font-size: 1.2rem;
+    }
+
+    .contentContainer p {
+      font-size: 0.8rem;
+    }
+  }
+
   .buttonContainer {
     display: flex;
     gap: .625rem; /* Add spacing between the buttons */
-    margin-top: auto; /* Push the buttons down */
     align-self: flex-start; /* Align buttons to the left */
-    margin-top: 2.5rem; /* Add spacing between the last <p> and the buttons */
   }
 
   .buttonContainer button {
