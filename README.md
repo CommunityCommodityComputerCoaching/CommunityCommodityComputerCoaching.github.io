@@ -131,6 +131,14 @@ To build and run the Docker container, follow these steps:
     1. If you don't need an image, simply delete the lines for *image, url and alt*
 3. add to the body of the doc and save the file!
 
+# Adding members to the **About Team** page
+
+1. In the [Team](/src/content/team/) directory make a copy of an existing file.
+2. edit the frontmatter as needed (the part between the `---`) 
+    1. Ensure draft is set to false if you want the page generated!
+3. Add an image to the [Assets](/src/assets/) folder
+4. The bio page for the member is generated automatically and filled with the text in the markdown file!
+
 [![Built with Astro](https://astro.badg.es/v1/built-with-astro.svg)](https://astro.build)
 
 Created @ DSM Hack 2025!
