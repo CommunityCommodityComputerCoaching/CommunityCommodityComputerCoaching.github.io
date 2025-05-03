@@ -1,10 +1,17 @@
 ---
 import Layout from "@layouts/Layout.astro"
-import Hero from "@components/hero.astro"
+import PageHero from "@components/pageHero.astro"
+import Container from "@components/container.astro"
 ---
 <Layout title="Donations">
+    <div class="min-h-screen">
+    <PageHero 
+        title="Support Our Mission" 
+        subtitle="Your donation helps us bring technology access to more communities."
+    />
+
     <section class="py-12 md:py-16 bg-white">
-        <div class="container-custom">
+        <div class="">
           <div class="max-w-3xl mx-auto text-center mb-12">
             <h2 class="text-3xl font-bold mb-6">Make a Difference Today</h2>
             <p class="text-lg text-gray-700">
@@ -15,30 +22,32 @@ import Hero from "@components/hero.astro"
           </div>
 
         <div class="flex flex-col md:flex-row gap-8 mt-8 mb-16">
-            <div class="md:w-1/2 p-6 rounded-lg bg-c4blue-50 flex flex-col items-center">
-              <div class="bg-c4blue rounded-full p-4 mb-4">
-                <!-- <HandCoins class="h-8 w-8 text-white" /> -->
-              </div>
-              <h3 class="text-xl font-bold mb-3 text-c4blue-500">Your Impact</h3>
-              <p class="text-center">
+            <div class="md:w-1/2 p-6 rounded-lg bg-blue-50 flex flex-col items-center">
+              <!-- <div class="bg-c4blue rounded-full p-4 mb-4">
+                <HandCoins class="h-8 w-8 text-white" />
+              </div> -->
+                <h3 class="text-xl font-bold mb-3 text-blue-500">Your Impact</h3>
+                <p class="text-center">
                 Every donation directly supports our programs providing technology 
                 access and education to communities in need. Your generosity helps us:
-              </p>
+                </p>
+            </div>
+
               <ul class="mt-4 space-y-2 text-left w-full">
                 <li class="flex items-start">
-                  <span class="bg-c4blue-300 rounded-full p-1 mr-2 mt-1">
+                  <span class="bg-blue-300 rounded-full p-1 mr-2 mt-1">
                     <!-- <PiggyBank class="h-4 w-4 text-white" /> -->
                   </span>
                   <span>Provide Chromebooks to students without home computers</span>
                 </li>
                 <li class="flex items-start">
-                  <span class="bg-c4blue-300 rounded-full p-1 mr-2 mt-1">
+                  <span class="bg-blue-300 rounded-full p-1 mr-2 mt-1">
                     <!-- <PiggyBank class="h-4 w-4 text-white" /> -->
                   </span>
                   <span>Train community members in essential digital skills</span>
                 </li>
                 <li class="flex items-start">
-                  <span class="bg-c4blue-300 rounded-full p-1 mr-2 mt-1">
+                  <span class="bg-blue-300 rounded-full p-1 mr-2 mt-1">
                     <!-- <PiggyBank class="h-4 w-4 text-white" /> -->
                   </span>
                   <span>Support technical assistance programs for seniors</span>
@@ -49,7 +58,7 @@ import Hero from "@components/hero.astro"
               <h3 class="text-2xl font-bold mb-6 text-center">Donate Now</h3>
               <!-- <DonationForm /> -->
             </div>
-          </div>
+        </div>
 
           <div class="section-divider"></div>            
 
@@ -85,4 +94,5 @@ import Hero from "@components/hero.astro"
 
         </div>
     </section>
+    </div>
 </Layout>
