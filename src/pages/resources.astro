@@ -2,6 +2,7 @@
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
+import FaqSection from "@components/faq-section.astro";
 ---
 
 <Layout title="Resources">
@@ -11,55 +12,28 @@ import Sectionhead from "@components/sectionhead.astro";
       <Fragment slot="desc">Explore our helpful resources.</Fragment>
     </Sectionhead>
 
-    <div class="flex flex-col gap-8 mt-16">
-      <section id="donate">
-        <h2 class="font-bold text-2xl text-gray-800">Donate</h2>
-        <div>
-          <p>
-            Your donations help us provide technology and training to those in
-            need.
-          </p>
-          <a href="/contact">Contact us to donate</a>
-        </div>
-      </section>
+    <FaqSection title="Donate" link="/donate" linktext="Contact us to donate">
+      Your donations help us provide technology and training to those in need.
+    </FaqSection>
 
-      <section id="faq">
-        <h2 class="font-bold text-2xl text-gray-800">FAQ</h2>
-        <div>
-          <p>Frequently Asked Questions</p>
-          <ul>
-            <li>
-              <b>What do you do?</b> We provide technology and training to
-              nonprofits and individuals.
-            </li>
-            <li>
-              <b>How can I get involved?</b> Contact us to volunteer or donate.
-            </li>
-          </ul>
-        </div>
-      </section>
+    <FaqSection title="FAQ">
+      <ul>
+        <li>
+          <b>What do you do?</b> We provide technology and training to
+          nonprofits and individuals.
+        </li>
+        <li>
+          <b>How can I get involved?</b> Contact us to volunteer or donate.
+        </li>
+      </ul>
+    </FaqSection>
 
-      <section id="internships">
-        <h2 class="font-bold text-2xl text-gray-800">Internships</h2>
-        <div>
-          <p>
-            We offer internships for students interested in technology and
-            nonprofits.
-          </p>
-          <a href="/contact">Contact us to apply</a>
-        </div>
-      </section>
+    <FaqSection title="Internships" link="/contact" linktext="Contact us to apply">
+      We offer internships for students interested in technology and nonprofits.
+    </FaqSection>
 
-      <section id="documentation">
-        <h2 class="font-bold text-2xl text-gray-800">Documentation</h2>
-        <div>
-          <p>
-            Here you will find documentation on how to use our services and
-            products.
-          </p>
-          <a href="/contact">Contact us for support</a>
-        </div>
-      </section>
-    </div>
+    <FaqSection title="Documentation" link="/documentation" linktext="Documentation">
+      Here you will find documentation on how to use our services and products.
+    </FaqSection>
   </Container>
 </Layout>
