@@ -1,4 +1,4 @@
-.hero-section {
+.heroSection {
     background-image: url("../../public/home-hero.jpg"); /* Path to your image */
     background-size: cover;
     background-position: center;
@@ -7,55 +7,91 @@
     position: relative; /* Make the section a positioning context */
   }
 
-  .white-overlay {
+  .whiteOverlay {
     position: absolute;
-    top: 6rem; /* Adjust for padding */
-    left: 6rem; /* Adjust for padding */
-    bottom: 5rem; /* Adjust for padding */
-    width: calc(65% - 3.75rem); /* Subtract padding from both sides */
-    height: calc(75% - 3.125rem); /* Subtract padding from top and bottom */
+    top: 5%; /* Adjust for padding */
+    left: 5%; /* Adjust for padding */
+    bottom: 5%; /* Adjust for padding */
+    width: 90%; /* Take up most of the width */
+    height: 50%; /* Let the content determine the height */
     background-color: white; /* Solid white background */
-    padding: 2.188rem; /* Add padding inside the div */
+    padding: 5%; /* Add padding inside the div */
     z-index: 1; /* Ensure it appears above the background */
     box-sizing: border-box; /* Include padding in width and height calculations */
     border-radius: .938rem; /* Add rounded corners */
     display: flex; /* Enable flexbox for content alignment */
     flex-direction: column; /* Stack content vertically */
-    justify-content: flex-start; /* Align content to the top */
+    justify-content: space-between; /* Distribute space evenly */
     align-items: flex-start; /* Align content to the left */
   }
 
-  .content-container {
+  .contentContainer {
     text-align: left; /* Ensure all text is left-aligned */
     display: flex;
     flex-direction: column;
     gap: .625rem; /* Add spacing between elements */
-    height: 100%; /* Ensure the container takes full height */
+    height: auto; /* Adjust height to content */
   }
 
-  .content-container p {
+  .contentContainer p {
     font-size: 1rem; /* Adjust font size for visibility */
     margin: 0; /* Remove default margin */
     line-height: 1.5; /* Adjust line height for readability */
     color: black; /* Ensure text is visible on the white background */
   }
 
-  .content-container h2 {
+  .contentContainer h2 {
     font-size: 2rem; /* Make the font larger */
     font-weight: bold; /* Make the text bold */
     margin: .625rem 0; /* Add spacing above and below */
     color: black; /* Ensure the text is visible */
   }
 
-  .button-container {
-    display: flex;
-    gap: .625rem; /* Add spacing between the buttons */
-    margin-top: auto; /* Push the buttons down */
-    align-self: flex-start; /* Align buttons to the left */
-    margin-top: 2.5rem; /* Add spacing between the last <p> and the buttons */
+  @media (max-width: 768px) {
+    .whiteOverlay {
+      padding: 3%;
+      top: 3%;
+      left: 3%;
+      bottom: 3%;
+      width: 94%;
+      height: 50%; /* Changed to auto */
+    }
+
+    .contentContainer h2 {
+      font-size: 1.5rem;
+    }
+
+    .contentContainer p {
+      font-size: 0.9rem;
+    }
   }
 
-  .button-container button {
+  @media (max-width: 480px) {
+    .whiteOverlay {
+      padding: 2%;
+      top: 2%;
+      left: 2%;
+      bottom: 2%;
+      width: 96%;
+      height: 40%; /* Changed to auto */
+    }
+
+    .contentContainer h2 {
+      font-size: 1.2rem;
+    }
+
+    .contentContainer p {
+      font-size: 0.8rem;
+    }
+  }
+
+  .buttonContainer {
+    display: flex;
+    gap: .625rem; /* Add spacing between the buttons */
+    align-self: flex-start; /* Align buttons to the left */
+  }
+
+  .buttonContainer button {
     padding: .625rem 2.5rem;
     font-size: 1rem;
     color: white;
@@ -66,32 +102,32 @@
     transition: background-color 0.3s ease;
   }
 
-  .button-container button:hover {
+  .buttonContainer button:hover {
     background-color: #0056b3; /* Darker blue on hover */
   }
 
   /* Responsive styles for buttons */
-    @media (max-width: 768px) {
-        .button-container button {
-            padding: .5rem 1.5rem; /* Reduce padding */
-            font-size: 0.875rem; /* Reduce font size */
-        }
-    }
+  @media (max-width: 768px) {
+      .buttonContainer button {
+          padding: .5rem 1.5rem; /* Reduce padding */
+          font-size: 0.875rem; /* Reduce font size */
+      }
+  }
 
-    @media (max-width: 480px) {
-        .button-container {
-            flex-direction: column; /* Stack buttons vertically */
-            gap: .5rem; /* Adjust spacing between buttons */
-        }
+  @media (max-width: 480px) {
+      .buttonContainer {
+          flex-direction: column; /* Stack buttons vertically */
+          gap: .5rem; /* Adjust spacing between buttons */
+      }
 
-        .button-container button {
-            width: 100%; /* Make buttons full width */
-            padding: .5rem; /* Adjust padding */
-            font-size: 0.75rem; /* Further reduce font size */
-        }
-    }
+      .buttonContainer button {
+          width: 100%; /* Make buttons full width */
+          padding: .5rem; /* Adjust padding */
+          font-size: 0.75rem; /* Further reduce font size */
+      }
+  }
 
-  .button-link {
+  .buttonLink {
     display: inline-block; /* Make the link behave like a button */
     font-size: 1rem;
     color: white;
@@ -104,6 +140,6 @@
     transition: background-color 0.3s ease;
   }
 
-  .button-link:hover {
+  .buttonLink:hover {
     background-color: #0056b3; /* Darker blue on hover */
   }

@@ -5,11 +5,26 @@
     margin: 1.25rem 0; /* Add spacing above and below the line */
 }
 
+/* Existing styles for image-container */
 .image-container {
     display: flex;
     justify-content: center; /* Center the images horizontally */
-    gap: 8rem; /* Add 1rem spacing between the divs */
+    gap: 8rem; /* Add spacing between the divs */
     margin-top: 1.25rem; /* Add spacing above the image container */
+}
+
+/* Responsive styles for stacking image-box divs */
+@media (max-width: 768px) {
+    .image-container {
+        flex-direction: column; /* Stack image-box divs vertically */
+        align-items: center; /* Center the stacked divs */
+        gap: 2rem; /* Add spacing between the stacked divs */
+    }
+
+    .image-box {
+        width: 100%; /* Make each image-box take full width */
+        max-width: 20rem; /* Optional: Limit the maximum width */
+    }
 }
 
 .image-box {
@@ -77,6 +92,7 @@
     position: bottom;
     transition: background-color 0.3s ease;
 }
+
 
 .button-container button:hover {
     background-color: #0056b3; /* Darker blue on hover */

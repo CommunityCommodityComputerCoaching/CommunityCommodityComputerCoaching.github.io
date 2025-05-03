@@ -1,21 +1,20 @@
 ---
-import "../styles/header.css"; // Import your CSS file for styles
+import styles from './header.module.css';
 ---
 
 <main class="w-full">
-  <section class="hero-section w-full flex flex-col justify-center items-center text-center">
-    <div class="white-overlay">
-      <div class="content-container">
+  <section class={`${styles.heroSection} w-full flex flex-col justify-center items-center text-center`}>
+    <div class={styles.whiteOverlay}>
+      <div class={styles.contentContainer}>
         <p>Digital literacy that comes to you.</p>
         <h2>Improving digital literacy.</h2>
         <p>We provide education and resources for protecting yourself online through training.</p>
-        <div class="button-container">
-          <a href="/mission" class="button-link">
+        <div class={styles.buttonContainer}>
+          <a href="/mission" class={styles.buttonLink}>
             <button>Learn More</button>
           </a>
 
-          <a href="/services" clasas="button-link">
-
+          <a href="/services" class={styles.buttonLink}>
             <button>Get Started</button>
           </a>
         </div>

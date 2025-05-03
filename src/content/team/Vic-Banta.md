@@ -3,7 +3,7 @@ draft: false
 name: "Vic Banta"
 title: "Local Tech Guru"
 avatar: {
-    src: ../../assets/Vic-banta.jpg,
+    src: ../../assets/vic-banta.png,
     alt: "Vic Banta"
 }
 publishDate: "2025-05-02 07:30 PM"
