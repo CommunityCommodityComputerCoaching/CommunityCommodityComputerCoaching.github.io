@@ -1,31 +1,30 @@
 <div class="component-header">
-  <h2>Configuration Options</h2>
+    <h2>Configuration Options</h2>
 </div>
 
 <div class="inline-selects">
-  <label for="Add-Users">Add Users?</label>
-  <select id="Add-Users" name="Add-Users" required>
-    <option value="" disabled selected>Select an option</option>
-    <option value="yes">Yes</option>
-    <option value="no">No</option>
-  </select>
+    <label for="yes-no">Add Users?</label>
+    <select id="yes-no" name="Add-Users" required>
+<div class="inline-selects">
+    <label for="yes-no">Add Users?</label>
+    <select id="yes-no" name="yesNo" required>
+        <option value="" disabled selected>Select an option</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+    </select>
+
+    <label for="yes-no">Add to network on site?</label>
+    <select id="yes-no" name="Add-Network" required>
+        <option value="" disabled selected>Select an option</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+    </select>
 </div>
 
-<div class="inline-selects">
-  <label for="Add-Network">Add to network on site?</label>
-  <select id="Add-Network" name="Add-Network" required>
-    <option value="" disabled selected>Select an option</option>
-    <option value="yes">Yes</option>
-    <option value="no">No</option>
-  </select>
-</div>
-
-<div class="inline-selects">
-  <label for="device-type">Device Type:</label>
-  <select id="device-type" name="device-type" required>
+<label for="dropdown">Device Type:</label>
+<select id="dropdown" name="device-type" required>
     <option value="" disabled selected>Select an option</option>
     <option value="laptop">Laptops</option>
     <option value="base">Chrome Base</option>
     <option value="tablet">Tablets</option>
-  </select>
-</div>
+</select>
