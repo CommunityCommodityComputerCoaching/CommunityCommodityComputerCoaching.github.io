@@ -29,9 +29,15 @@
 3. Add an image to the [Assets](/src/assets/) folder
 4. The bio page for the member is generated automatically and filled with the text in the markdown file!
 
+## Adding events
+1. en events.json under the public folder
+2. Add a new entry into the json list with the start date and time and the end date and time, as well as the event name and increment the id by 1. 
+3. Save and push json file to repo, it should pull the new events in and display them on the calendar
+
+
 ## Contributing
 
-## Installation
+## Installati
 
 *Requirements:*
 - nodejs
@@ -39,6 +45,7 @@
 - docker (optional)
 
 Building locally by cloning this repo.
+
 
 ### 1. Clone the repo
 

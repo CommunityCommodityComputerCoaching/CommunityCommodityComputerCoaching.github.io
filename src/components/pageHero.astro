@@ -1,0 +1,17 @@
+---
+const {backgroundImage, subtitle, title} = Astro.props
+---
+<div 
+    class="page-title-section relative overflow-hidden"
+    style={{
+    backgroundImage: backgroundImage ? `url(${backgroundImage})` : 'none',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    }}
+>
+    <div class="absolute inset-0 bg-blue opacity-80 z-0"></div>
+    <div class="container-custom  z-10">
+    <h1 class="text-banner text-center mb-4">{title}</h1>
+    {subtitle && <p class="text-lg md:text-xl text-center max-w-3xl mx-auto">{subtitle}</p>}
+    </div>
+</div>

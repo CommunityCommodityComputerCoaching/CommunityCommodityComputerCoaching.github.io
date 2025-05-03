@@ -46,7 +46,7 @@
 }
 
 .info-blurb {
-    font-size: 4rem; /* Adjust font size for visibility */
+    font-size: 3rem; /* Adjust font size for visibility */
     margin: 20px 0; /* Add spacing above and below */
     text-align: center; /* Center the text */
     font-weight: bold; /* Make the text bold */
@@ -160,4 +160,34 @@
     max-width: 650px; /* Increase the maximum width of the image */
     height: auto; /* Maintain aspect ratio */
     border-radius: 10px; /* Add rounded corners to the image */
+}
+
+@media (max-width: 1000px) {
+    .image-box-left {
+        flex-direction: column; /* Stack image and text vertically */
+        text-align: center; /* Center the content */
+        align-items: center; /* Center items horizontally */
+    }
+
+    .training-blurb-right {
+        padding-left: 0; /* Remove left padding */
+        text-align: center; /* Center the text */
+    }
+
+    .image-box-right {
+        flex-direction: column; /* Stack image and text vertically */
+        text-align: center; /* Center the content */
+        align-items: center; /* Center items horizontally */
+    }
+
+    .training-blurb-left {
+        padding-right: 0; /* Remove right padding */
+        text-align: center; /* Center the text */
+    }
+
+    .button-container {
+        justify-content: center; /* Center buttons horizontally */
+        align-items: center; /* Align items vertically */
+        margin-top: 20px; /* Add some space above the buttons */
+    }
 }
