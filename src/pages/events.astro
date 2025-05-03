@@ -1,0 +1,86 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import '@schedule-x/theme-default/dist/index.css';
+---
+
+<Layout title="Events">
+    <Container>
+        <h3 class="info-blurb">Events</h3>
+        <hr class="separator" />
+        <div id="calendar" class="calendar"></div>
+        <ul id="event-list" class="event-list"></ul> <!-- List for upcoming events -->
+    </Container>
+</Layout>
+
+<script>
+    import { createCalendar, createViewMonthGrid } from '@schedule-x/calendar';
+
+    const calendarElement = document.getElementById('calendar');
+    const eventListElement = document.getElementById('event-list') ?? document.createElement('ul');
+
+    let calendar;
+
+    // Fetch events from the static JSON file
+    async function loadEvents() {
+        try {
+            const response = await fetch('/events.json'); // Path to the JSON file
+            if (!response.ok) {
+                throw new Error('Failed to fetch events');
+            }
+            const events = await response.json();
+
+            // Initialize the calendar with fetched events
+            calendar = createCalendar({
+                views: [createViewMonthGrid()],
+                events: events,
+            });
+
+            if (calendarElement) {
+                calendar.render(calendarElement);
+            } else {
+                console.error("Calendar element not found");
+            }
+
+            // Populate the event list
+            updateEventList(events);
+        } catch (error) {
+            console.error('Error loading events:', error);
+        }
+    }
+
+    function updateEventList(events) {
+        eventListElement.innerHTML = ''; // Clear the existing list
+        events
+            .sort((a, b) => new Date(a.start).getTime() || 0 - new Date(b.start).getTime() || 0) // Sort events by start date
+            .forEach(event => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${event.title} - ${new Date(event.start).toLocaleString()} to ${new Date(event.end).toLocaleString()}`;
+                eventListElement.appendChild(listItem);
+            });
+    }
+
+    loadEvents();
+
+    // Show the event form when the "Create New Event" button is clicked
+    const showEventFormButton = document.getElementById('show-event-form-button');
+    const eventForm = document.getElementById('event-form');
+    if (showEventFormButton && eventForm) {
+        showEventFormButton.addEventListener('click', () => {
+            eventForm.classList.toggle('hidden'); // Show or hide the form
+        });
+    }
+</script>
+
+<style>
+    .event-list {
+        margin-top: 1rem;
+        padding: 0;
+        list-style: none;
+    }
+
+    .event-list li {
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+    }
+</style>
