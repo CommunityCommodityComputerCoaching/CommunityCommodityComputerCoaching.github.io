@@ -263,8 +263,3 @@ flex: 1;
   margin-bottom: 0;
   font-weight: normal;
 }
-
-.is-invalid,
-.was-validated :invalid {
-  border-color: #dc3545;
-}
