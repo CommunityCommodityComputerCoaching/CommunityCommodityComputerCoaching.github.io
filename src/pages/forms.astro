@@ -3,20 +3,17 @@
 // Astro component script section (optional, if needed)
 import Container from "@components/container.astro"
 import Layout from "@layouts/Layout.astro"
-
-
 // Astro components section (optional, if needed)
 import Organization from "@components/organization.astro"
 import Event from "@components/event.astro"
 import Config from "@components/config.astro"
-
-
 // CSS styles (optional, if needed)
 import '../styles/styles.css';
 
 ---
 
 <Layout title="">
+  
   <form
   action="https://api.web3forms.com/submit"
   method="POST"
@@ -25,10 +22,20 @@ import '../styles/styles.css';
   data-astro-reload
   novalidate>
 
+    <!-- Options for web3forms -->
     <input type="hidden" name="access_key" value="38c738a7-fc29-443d-8bd7-7a16cdc1c181">
+    <input type="hidden" name="subject" value="Rental Quote Request">
+    <input type="hidden" name="redirect" value="https://C4.giving/">
+    <input type="checkbox" class="hidden" style="display:none" name="botcheck" />
 
-    <input type="hidden" name="_subject" value="Rental Request">
-    <input type="hidden" name="_template" value="table">
+    <label>Do you want to rent or buy?</label>
+      <div class="toggle-wrapper">
+      <label class="toggle-container">
+        <input type="checkbox" id="toggle-button" />
+        <span class="slider"></span>
+      </label>
+      <label id="rent-or-buy">Rent</label>
+    </div>
 
     <Organization id="organization-details"/>
 
@@ -40,6 +47,16 @@ import '../styles/styles.css';
       <hr class="separator" />
       <Config  />
     </div>
-    <button type="submit" class="rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200 w-full px-5 py-2.5 bg-white border-2 border-black hover:bg-gray-100 text-black ">Submit</button>
+    <button type="submit" id="submit-button">Submit</button>
+    <div id="result" class="mt-3 text-center"></div>
   </form>
+  
 </Layout>
+
+<script is:inline>
+  import "../scripts/web3form.js"
+</script>
+
+<script>
+  import "../scripts/toggle.js"
+</script>
