@@ -1,3 +1,31 @@
-<div>
-    <label>hello world</label>
-</div>
+---
+import Layout from "@layouts/Layout.astro"
+
+const allDocs = Object.values(import.meta.glob('./documents/*.md', { eager: true }))
+---
+
+<Layout title="C4 Documentation">
+    <ul>
+    {
+    allDocs.map(
+        (doc: any) => 
+        doc.frontmatter.show &&
+        <li>
+            <a href={doc.url}>{doc.frontmatter.title}: </a>{doc.frontmatter.description}
+        </li>
+        )}
+    </ul>
+</Layout>
+
+<style>
+    li {
+        margin: auto;
+        width: auto;
+        text-align: center;
+    }
+
+    a {
+        text-decoration: underline;
+        font-size: larger;
+    }
+</style>

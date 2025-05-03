@@ -108,6 +108,29 @@ To build and run the Docker container, follow these steps:
 
     This will start the application and make it accessible at `http://localhost:4000`.
 
+## Credits
+
+1.  **Build the image:**
+
+    ```bash
+    docker build -t community-commodity-computer-coaching .
+    ```
+
+2.  **Run the container:**
+
+    ```bash
+    docker run -p 4000:4000 community-commodity-computer-coaching
+    ```
+
+    This will start the application and make it accessible at `http://localhost:4000`.
+
+# Adding to **Documentation**
+
+1. Copy the example-doc.md in the [documents directory](src/pages/documents/)
+2. edit the frontmatter (the top part in between the `---`) as needed (title, published, etc.)
+    1. If you don't need an image, simply delete the lines for *image, url and alt*
+3. add to the body of the doc and save the file!
+
 [![Built with Astro](https://astro.badg.es/v1/built-with-astro.svg)](https://astro.build)
 
 Created @ DSM Hack 2025!
