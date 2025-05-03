@@ -1,0 +1,72 @@
+---
+import Container from "@components/container.astro";
+import Layout from "@layouts/Layout.astro";
+
+import "../styles/training.css";
+---
+
+
+<Layout title="">
+    <Container>
+        <main class="w-full">
+            <section class="hero-section w-full flex flex-col justify-center items-center text-center">
+                <div class="white-overlay">
+                    <div class="content-container">
+                        <h2>Fasciliated Training.</h2>
+                        <p>Get advanced training from our experts.</p>
+                    </div>
+                </div>
+            </section>
+            <h3 class="info-blurb">What We Provide</h3>
+            <hr class="separator" />
+
+            <div class="image-box-left">
+                <img class="hero-image-right" src="../../public/training-1.jpg" alt="Training Services" />
+                <div class="training-blurb-right">
+                    <p class="category-title">Build your digital confidence with one of our trainings</p>
+                    <br/>
+                    <p class="category-blurb">
+                        Our technical literacy training program is designed to <br/>
+                        empower participants with the digital skills needed for <br/>
+                        everyday life, job readiness, and personal growth. We <br/>
+                        provide a rented Chromebook for the duration of the <br/>
+                        training—ensuring everyone can participate fully, <br/>
+                        regardless of their current technology access.
+                    </p>
+                    <div class="button-container">
+                    <a href="/contact" class="button-link">
+                        <button>Book a Training</button>
+                    </a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="padding-top: 3rem;" class="image-box-right">
+                <img class="hero-image-left" src="../../public/training-2.jpg" alt="Training Services" />
+                <div class="training-blurb-left">
+                    <p class="category-title">Training Benefits & Takeaways</p>
+                    <br/>
+                    <p style="font-weight: bold;">Basic Chromebook Navigation</p>
+                    <p class="category-blurb">
+                        Understand the ChromeOS interface, use the touchpad <br/>and keyboard, manage tabs and windows, and connect to Wi-Fi.
+                    </p>
+                    <br/>
+                    <p style="font-weight: bold;">Online Safety & Privacy</p>
+                    <p class="category-blurb">
+                        Learn how to create strong passwords, identify phishing attempts, and protect personal information online.
+                    </p>
+                    <br/>
+                    <p style="font-weight: bold;">Google Workspace Tools</p>
+                    <p class="category-blurb">
+                        Get hands-on with Gmail, Google Docs, Drive, and Meet to handle communication, document creation, and collaboration.
+                    </p>
+                    <div class="button-container">
+                    <a href="/contact" class="button-link">
+                        <button>Book a Training</button>
+                    </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </Container>
+</Layout>

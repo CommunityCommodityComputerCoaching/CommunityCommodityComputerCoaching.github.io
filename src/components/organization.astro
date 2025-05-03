@@ -1,3 +1,16 @@
+<div class="component-header">
+    <h2>Organization Details</h2>
+</div>
+
+<label>Do you want to rent or buy?</label>
+<div class="toggle-wrapper">
+<label class="toggle-container">
+    <input type="checkbox" id="toggle-button" />
+    <span class="slider"></span>
+</label>
+<label id="rent-or-buy">Rent</label>
+</div>
+
 <!-- name, organization, org address, event address, phone, email -->
 <label for="name">Contact Name:</label>
 <input type="text" id="name" name="name" required >
@@ -15,3 +28,25 @@
 
 <label for="email">Email:</label>
 <input type="email" id="email" name="email" required >
+
+<script>
+    const toggleButton = document.getElementById('toggle-button') as HTMLInputElement;
+    const configOptions = document.getElementById('config');
+
+    if (toggleButton) {
+        toggleButton.addEventListener('change', () => {
+            configOptions?.classList.toggle('hidden')
+            if (toggleButton.checked) {
+                const rentOrBuyLabel = document.getElementById('rent-or-buy');
+                if (rentOrBuyLabel) {
+                    rentOrBuyLabel.innerText = "Buy";
+                }
+            } else {
+                const rentOrBuyLabel = document.getElementById('rent-or-buy');
+                if (rentOrBuyLabel) {
+                    rentOrBuyLabel.innerText = "Rent";
+                }
+            }
+        });
+    }
+</script>
