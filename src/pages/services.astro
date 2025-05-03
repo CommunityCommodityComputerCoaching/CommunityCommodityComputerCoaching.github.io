@@ -1,10 +1,10 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
-import Sectionhead from "@components/sectionhead.astro";
 import PricingCard from "@components/pricing.astro";
 import { Picture } from "astro:assets";
 import heroImage from "assets/rental_logo.png";
+import "../styles/training.css";
 
 const pricing = [
   {
@@ -58,59 +58,77 @@ const pricing = [
 
 <Layout title="Services">
   <Container>
-    <Sectionhead>
-      <Fragment slot="title">Services</Fragment>
-      <Fragment slot="desc">Explore our services.</Fragment>
-    </Sectionhead>
+    <main class="w-full">
+      <section class="hero-section w-full flex flex-col justify-center items-center text-center">
+        <div class="white-overlay">
+          <div class="content-container">
+            <h2>Our Services.</h2>
+            <p>Explore our services.</p>
+          </div>
+        </div>
+      </section>
 
-    <section id="rentals">
-      <h2 class="font-bold text-2xl text-gray-800">Rentals</h2>
-      <div class="flex justify-center">
-        <Picture class="logo" src={heroImage} alt="Rental image" />
-      </div>
-        <p class="mt-4 text-lg leading-relaxed text-slate-500">
-          Renting Chromebooks offers a cost-effective and flexible solution for
-          nonprofits needing devices for events. We handle maintenance, provide
-          up-to-date technology, and eliminate storage concerns.
-        </p>
-        <p class="mt-4 text-lg leading-relaxed text-slate-500">
-          Key advantages include:
-        </p>
-        <ul class="list-disc pl-5 mt-2 text-lg leading-relaxed text-slate-500">
-          <li>
-            <b>Cost-Effectiveness:</b> Ideal for short-term needs, avoiding
-            large upfront costs.
-          </li>
-          <li>
-            <b>Flexibility:</b> Rent the exact number of devices needed for each
-            event.
-          </li>
-          <li>
-            <b>Maintenance & Support:</b> We manage all maintenance and
-            troubleshooting.
-          </li>
-          <li>
-            <b>Up-to-Date Technology:</b> Access to the latest Chromebook
-            models.
-          </li>
-          <li>
-            <b>No Storage Concerns:</b> Eliminate the need to store and secure
-            devices.
-          </li>
-        </ul>
-        <p class="mt-4 text-lg leading-relaxed text-slate-500">
-          Contact us to discuss your specific needs and receive a customized
-          rental plan.
-        </p>
-        <br>
-      </div>
-    </section>
+      <h3 class="info-blurb">Device Rentals</h3>
+      <hr class="separator" />
 
-    <section id="pricing">
-      <h2 class="font-bold text-2xl text-gray-800">Pricing</h2>
-      <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
-        {pricing.map((item) => <PricingCard plan={item} />)}
+      <div class="image-box-left">
+        <Picture class="hero-image-right" src={heroImage} alt="Rental image" />
+        <div class="training-blurb-right">
+          <p class="category-title">
+            Renting Chromebooks for Nonprofits
+          </p>
+          <br />
+          <p class="category-blurb">
+            Renting Chromebooks offers a cost-effective and flexible solution
+            for nonprofits needing devices for events. We handle maintenance,
+            provide up-to-date technology, and eliminate storage concerns.
+          </p>
+          <br />
+          <p class="category-blurb">
+            Key advantages include:
+          </p>
+          <ul class="list-disc pl-5 mt-2 text-lg leading-relaxed text-slate-500">
+            <li>
+              <b>Cost-Effectiveness:</b> Ideal for short-term needs, avoiding
+              large upfront costs.
+            </li>
+            <li>
+              <b>Flexibility:</b> Rent the exact number of devices needed for
+              each event.
+            </li>
+            <li>
+              <b>Maintenance & Support:</b> We manage all maintenance and
+              troubleshooting.
+            </li>
+            <li>
+              <b>Up-to-Date Technology:</b> Access to the latest Chromebook
+              models.
+            </li>
+            <li>
+              <b>No Storage Concerns:</b> Eliminate the need to store and
+              secure devices.
+            </li>
+          </ul>
+          <p class="category-blurb">
+            Contact us to discuss your specific needs and receive a customized
+            rental plan.
+          </p>
+          <div class="button-container">
+            <a href="/contact" class="button-link">
+              <button>Get a Quote</button>
+            </a>
+          </div>
+        </div>
       </div>
-    </section>
+
+      <h3 class="info-blurb">Pricing</h3>
+      <hr class="separator" />
+
+      <section id="pricing">
+        <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
+          {pricing.map((item) => <PricingCard plan={item} />)}
+        </div>
+      </section>
+    </main>
   </Container>
 </Layout>
