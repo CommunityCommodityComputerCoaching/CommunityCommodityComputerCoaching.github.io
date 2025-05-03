@@ -71,25 +71,25 @@
   }
 
   /* Responsive styles for buttons */
-    @media (max-width: 768px) {
-        .buttonContainer button {
-            padding: .5rem 1.5rem; /* Reduce padding */
-            font-size: 0.875rem; /* Reduce font size */
-        }
-    }
+  @media (max-width: 768px) {
+      .buttonContainer button {
+          padding: .5rem 1.5rem; /* Reduce padding */
+          font-size: 0.875rem; /* Reduce font size */
+      }
+  }
 
-    @media (max-width: 480px) {
-        .buttonContainer {
-            flex-direction: column; /* Stack buttons vertically */
-            gap: .5rem; /* Adjust spacing between buttons */
-        }
+  @media (max-width: 480px) {
+      .buttonContainer {
+          flex-direction: column; /* Stack buttons vertically */
+          gap: .5rem; /* Adjust spacing between buttons */
+      }
 
-        .buttonContainer button {
-            width: 100%; /* Make buttons full width */
-            padding: .5rem; /* Adjust padding */
-            font-size: 0.75rem; /* Further reduce font size */
-        }
-    }
+      .buttonContainer button {
+          width: 100%; /* Make buttons full width */
+          padding: .5rem; /* Adjust padding */
+          font-size: 0.75rem; /* Further reduce font size */
+      }
+  }
 
   .buttonLink {
     display: inline-block; /* Make the link behave like a button */
