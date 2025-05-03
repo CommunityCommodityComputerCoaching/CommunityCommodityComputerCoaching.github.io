@@ -19,6 +19,8 @@
     "@iconify-json/bx": "^1.2.2",
     "@iconify-json/simple-icons": "^1.2.33",
     "@iconify-json/uil": "^1.2.3",
+    "@schedule-x/calendar": "^2.29.0",
+    "@schedule-x/theme-default": "^2.29.0",
     "@tailwindcss/typography": "^0.5.16",
     "astro": "^5.7.10",
     "astro-icon": "^1.1.5",

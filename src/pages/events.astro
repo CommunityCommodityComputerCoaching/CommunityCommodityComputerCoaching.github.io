@@ -1,0 +1,82 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import '@schedule-x/theme-default/dist/index.css';
+---
+
+<Layout title="Events">
+    <Container>
+        <h3 class="info-blurb">Events</h3>
+        <hr class="separator" />
+        <div id="calendar" class="calendar"></div>
+    </Container>
+</Layout>
+
+<script>
+    import { createCalendar, createViewMonthGrid } from '@schedule-x/calendar';
+
+    const calendarElement = document.getElementById('calendar');
+    let calendar;
+
+    // Fetch events from the static JSON file
+    async function loadEvents() {
+        try {
+            const response = await fetch('/events.json'); // Path to the JSON file
+            if (!response.ok) {
+                throw new Error('Failed to fetch events');
+            }
+            const events = await response.json();
+
+            // Initialize the calendar with fetched events
+            calendar = createCalendar({
+                views: [createViewMonthGrid()],
+                events: events,
+            });
+
+            if (calendarElement) {
+                calendar.render(calendarElement);
+            } else {
+                console.error("Calendar element not found");
+            }
+        } catch (error) {
+            console.error('Error loading events:', error);
+        }
+    }
+
+    loadEvents();
+
+    // Show the event form when the "Create New Event" button is clicked
+    const showEventFormButton = document.getElementById('show-event-form-button');
+    const eventForm = document.getElementById('event-form');
+    if (showEventFormButton && eventForm) {
+        showEventFormButton.addEventListener('click', () => {
+            eventForm.classList.toggle('hidden'); // Show or hide the form
+        });
+    }
+
+    // Add event listener for the event form submission
+    if (eventForm) {
+        eventForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Prevent form from reloading the page
+
+            const title = document.getElementById('event-title').value;
+            const start = document.getElementById('event-start').value;
+            const end = document.getElementById('event-end').value;
+
+            if (title && start && end) {
+                const newEvent = {
+                    id: Date.now(), // Unique ID for the event
+                    title,
+                    start,
+                    end
+                };
+                calendar.addEvent(newEvent); // Add the new event to the calendar
+                alert(`Event "${newEvent.title}" added!`);
+                eventForm.reset(); // Clear the form
+                eventForm.classList.add('hidden'); // Hide the form
+            } else {
+                alert('Please fill out all fields.');
+            }
+        });
+    }
+</script>
