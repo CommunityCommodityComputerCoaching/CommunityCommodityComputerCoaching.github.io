@@ -1,4 +1,4 @@
-.hero-section {
+.heroSection {
     background-image: url("../../public/home-hero.jpg"); /* Path to your image */
     background-size: cover;
     background-position: center;
@@ -7,7 +7,7 @@
     position: relative; /* Make the section a positioning context */
   }
 
-  .white-overlay {
+  .whiteOverlay {
     position: absolute;
     top: 6rem; /* Adjust for padding */
     left: 6rem; /* Adjust for padding */
@@ -25,7 +25,7 @@
     align-items: flex-start; /* Align content to the left */
   }
 
-  .content-container {
+  .contentContainer {
     text-align: left; /* Ensure all text is left-aligned */
     display: flex;
     flex-direction: column;
@@ -33,21 +33,21 @@
     height: 100%; /* Ensure the container takes full height */
   }
 
-  .content-container p {
+  .contentContainer p {
     font-size: 1rem; /* Adjust font size for visibility */
     margin: 0; /* Remove default margin */
     line-height: 1.5; /* Adjust line height for readability */
     color: black; /* Ensure text is visible on the white background */
   }
 
-  .content-container h2 {
+  .contentContainer h2 {
     font-size: 2rem; /* Make the font larger */
     font-weight: bold; /* Make the text bold */
     margin: .625rem 0; /* Add spacing above and below */
     color: black; /* Ensure the text is visible */
   }
 
-  .button-container {
+  .buttonContainer {
     display: flex;
     gap: .625rem; /* Add spacing between the buttons */
     margin-top: auto; /* Push the buttons down */
@@ -55,7 +55,7 @@
     margin-top: 2.5rem; /* Add spacing between the last <p> and the buttons */
   }
 
-  .button-container button {
+  .buttonContainer button {
     padding: .625rem 2.5rem;
     font-size: 1rem;
     color: white;
@@ -66,32 +66,32 @@
     transition: background-color 0.3s ease;
   }
 
-  .button-container button:hover {
+  .buttonContainer button:hover {
     background-color: #0056b3; /* Darker blue on hover */
   }
 
   /* Responsive styles for buttons */
     @media (max-width: 768px) {
-        .button-container button {
+        .buttonContainer button {
             padding: .5rem 1.5rem; /* Reduce padding */
             font-size: 0.875rem; /* Reduce font size */
         }
     }
 
     @media (max-width: 480px) {
-        .button-container {
+        .buttonContainer {
             flex-direction: column; /* Stack buttons vertically */
             gap: .5rem; /* Adjust spacing between buttons */
         }
 
-        .button-container button {
+        .buttonContainer button {
             width: 100%; /* Make buttons full width */
             padding: .5rem; /* Adjust padding */
             font-size: 0.75rem; /* Further reduce font size */
         }
     }
 
-  .button-link {
+  .buttonLink {
     display: inline-block; /* Make the link behave like a button */
     font-size: 1rem;
     color: white;
@@ -104,6 +104,6 @@
     transition: background-color 0.3s ease;
   }
 
-  .button-link:hover {
+  .buttonLink:hover {
     background-color: #0056b3; /* Darker blue on hover */
   }
