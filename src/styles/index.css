@@ -14,7 +14,7 @@
 }
 
 /* Responsive styles for stacking image-box divs */
-@media (max-width: 768px) {
+@media (max-width: 853px) {
     .image-container {
         flex-direction: column; /* Stack image-box divs vertically */
         align-items: center; /* Center the stacked divs */

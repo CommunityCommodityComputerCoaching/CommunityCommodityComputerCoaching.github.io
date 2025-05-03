@@ -35,13 +35,15 @@
 
     if (toggleButton) {
         toggleButton.addEventListener('change', () => {
-            configOptions?.classList.toggle('hidden')
             if (toggleButton.checked) {
+                configOptions?.style.setProperty('display', 'none')
+                // configOptions?.classList.toggle('hidden')
                 const rentOrBuyLabel = document.getElementById('rent-or-buy');
                 if (rentOrBuyLabel) {
                     rentOrBuyLabel.innerText = "Buy";
                 }
             } else {
+                configOptions?.style.setProperty('display', 'block')
                 const rentOrBuyLabel = document.getElementById('rent-or-buy');
                 if (rentOrBuyLabel) {
                     rentOrBuyLabel.innerText = "Rent";
