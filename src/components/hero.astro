@@ -1,34 +1,110 @@
----
-import { Picture } from "astro:assets";
-import heroImage from "assets/main_logo.png";
-import Link from "@components/ui/link.astro";
-import { Icon } from "astro-icon/components";
----
- <style>
-    .logo-container {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 20px;
-    }
-    .logo {
-        width: 256px;
-        height: 256px;
-    }
+<style>
+  .hero-section {
+    background-image: url("../../public/home-hero.jpg"); /* Path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 50vh; /* Restrict height to 50% of the viewport */
+    position: relative; /* Make the section a positioning context */
+  }
+
+  .white-overlay {
+    position: absolute;
+    top: 6rem; /* Adjust for padding */
+    left: 6rem; /* Adjust for padding */
+    bottom: 5rem; /* Adjust for padding */
+    width: calc(65% - 60px); /* Subtract padding from both sides */
+    height: calc(75% - 50px); /* Subtract padding from top and bottom */
+    background-color: white; /* Solid white background */
+    padding: 35px; /* Add padding inside the div */
+    z-index: 1; /* Ensure it appears above the background */
+    box-sizing: border-box; /* Include padding in width and height calculations */
+    border-radius: 15px; /* Add rounded corners */
+    display: flex; /* Enable flexbox for content alignment */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: flex-start; /* Align content to the top */
+    align-items: flex-start; /* Align content to the left */
+  }
+
+  .content-container {
+    text-align: left; /* Ensure all text is left-aligned */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Add spacing between elements */
+    height: 100%; /* Ensure the container takes full height */
+  }
+
+  .content-container p {
+    font-size: 1rem; /* Adjust font size for visibility */
+    margin: 0; /* Remove default margin */
+    line-height: 1.5; /* Adjust line height for readability */
+    color: black; /* Ensure text is visible on the white background */
+  }
+
+  .content-container h2 {
+    font-size: 2rem; /* Make the font larger */
+    font-weight: bold; /* Make the text bold */
+    margin: 10px 0; /* Add spacing above and below */
+    color: black; /* Ensure the text is visible */
+  }
+
+  .button-container {
+    display: flex;
+    gap: 10px; /* Add spacing between the buttons */
+    margin-top: auto; /* Push the buttons down */
+    align-self: flex-start; /* Align buttons to the left */
+    margin-top: 40px; /* Add spacing between the last <p> and the buttons */
+  }
+
+  .button-container button {
+    padding: 10px 40px;
+    font-size: 1rem;
+    color: white;
+    background-color: #007BFF; /* Blue background */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .button-container button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+
+  .button-link {
+    display: inline-block; /* Make the link behave like a button */
+    font-size: 1rem;
+    color: white;
+    background-color: #007BFF; /* Blue background */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none; /* Remove underline */
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .button-link:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+
 </style>
-<main class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
-   <!---   <div class="py-6 md:order-1 hidden md:block"> --->
-    <!-- Displaying your image -->
-    <div class="logo-container">
-        <Picture class="logo" src={heroImage} alt="Hero image" />
+<main class="w-full">
+  <section class="hero-section w-full flex flex-col justify-center items-center text-center">
+    <div class="white-overlay">
+      <div class="content-container">
+        <p>Digital literacy that comes to you.</p>
+        <h2>Improving digital literacy.</h2>
+        <p>We provide education and resources for protecting yourself online through training.</p>
+        <div class="button-container">
+          <a href="/mission" class="button-link">
+            <button>Learn More</button>
+          </a>
+          <a href="/forms" class="button-link">
+            <button>Get Started</button>
+          </a>
+        </div>
+      </div>
     </div>
-<!---  </div> --->
-  <div>
- <!---   <h1 class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
-      C4giving
-    </h1> --->
-    Community Commodity Computer Coaching
-    <p class="text-lg mt-4 text-slate-600 max-w-xl">
-      Empowering Communities with Compassionate Tech Solutions
-    </p>
-  </div>
+  </section>
 </main>

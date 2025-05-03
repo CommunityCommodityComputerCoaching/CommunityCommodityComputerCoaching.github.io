@@ -5,13 +5,54 @@ import Cta from "@components/cta.astro";
 import Hero from "@components/hero.astro";
 import Logos from "@components/logos.astro";
 import Layout from "@layouts/Layout.astro";
+import '../styles/index.css';
 ---
 
 <Layout title="">
   <Container>
     <Hero />
-    <!-- <Features />
-    <Logos />
-    <Cta /> -->
+    <h3 class="info-blurb">What We Provide</h3>
+    <hr class="separator" />
+    <div class="image-container">
+      <div class="image-box">
+        <img src="../../public/rentals.jpg" alt="Rental Services" />
+        <p class="category-title">Chromebook Rental</p>
+        <p class="category-blurb">
+          Rent up to 50 chromebooks for an event.
+        </br/>We can deliver and pick up them up!
+        </p>
+        <div class="button-container">
+          <a href="/forms" class="button-link">
+            <button>Rent Chromebooks</button>
+          </a>
+        </div>
+      </div>
+      <div class="image-box">
+        <img src="../../public/sales.jpg" alt="Sales Services" />
+        <p class="category-title">Chromebook Sales</p>
+        <p class="category-blurb">
+          Purchase a fresh, factory reset chromebook.
+        </p>
+        <br/>
+        <div class="button-container" style="padding-top: 1.10rem;">
+          <a href="/forms" class="button-link">
+            <button>Purchase a Chromebook</button>
+          </a>
+        </div>
+      </div>
+      <div class="image-box">
+        <img src="../../public/training.jpg" alt="Training Services" />
+        <p class="category-title">Digital literacy training</p>
+        <p class="category-blurb">
+          We provide onsite training using our own <br/> equipment.
+        </p>
+        <div class="button-container">
+          <a href="/contact" class="button-link">
+            <button>Book a Training</button>
+          </a>
+        </div>
+      </div>
+    </div>
+    <br/>
   </Container>
 </Layout>
