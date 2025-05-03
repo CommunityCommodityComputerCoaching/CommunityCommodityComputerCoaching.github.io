@@ -11,10 +11,6 @@
 
 ## Empowering Communities with Compassionate Tech Solutions
 
-*Requirements:*
-- nodejs
-- npm or yarn or pnpm
-- docker (optional)
 
 # Adding to **Documentation**
 
@@ -34,6 +30,11 @@
 # Contributing
 
 ## Installation
+
+*Requirements:*
+- nodejs
+- npm or yarn or pnpm
+- docker (optional)
 
 Building locally by cloning this repo.
 
