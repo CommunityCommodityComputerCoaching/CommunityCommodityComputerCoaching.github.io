@@ -9,6 +9,7 @@ import '@schedule-x/theme-default/dist/index.css';
         <h3 class="info-blurb">Events</h3>
         <hr class="separator" />
         <div id="calendar" class="calendar"></div>
+        <ul id="event-list" class="event-list"></ul> <!-- List for upcoming events -->
     </Container>
 </Layout>
 
@@ -16,6 +17,8 @@ import '@schedule-x/theme-default/dist/index.css';
     import { createCalendar, createViewMonthGrid } from '@schedule-x/calendar';
 
     const calendarElement = document.getElementById('calendar');
+    const eventListElement = document.getElementById('event-list') ?? document.createElement('ul');
+
     let calendar;
 
     // Fetch events from the static JSON file
@@ -38,9 +41,23 @@ import '@schedule-x/theme-default/dist/index.css';
             } else {
                 console.error("Calendar element not found");
             }
+
+            // Populate the event list
+            updateEventList(events);
         } catch (error) {
             console.error('Error loading events:', error);
         }
+    }
+
+    function updateEventList(events) {
+        eventListElement.innerHTML = ''; // Clear the existing list
+        events
+            .sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime()) // Sort events by start date
+            .forEach(event => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${event.title} - ${new Date(event.start).toLocaleString()} to ${new Date(event.end).toLocaleString()}`;
+                eventListElement.appendChild(listItem);
+            });
     }
 
     loadEvents();
@@ -53,30 +70,17 @@ import '@schedule-x/theme-default/dist/index.css';
             eventForm.classList.toggle('hidden'); // Show or hide the form
         });
     }
-
-    // Add event listener for the event form submission
-    if (eventForm) {
-        eventForm.addEventListener('submit', (e) => {
-            e.preventDefault(); // Prevent form from reloading the page
-
-            const title = document.getElementById('event-title').value;
-            const start = document.getElementById('event-start').value;
-            const end = document.getElementById('event-end').value;
-
-            if (title && start && end) {
-                const newEvent = {
-                    id: Date.now(), // Unique ID for the event
-                    title,
-                    start,
-                    end
-                };
-                calendar.addEvent(newEvent); // Add the new event to the calendar
-                alert(`Event "${newEvent.title}" added!`);
-                eventForm.reset(); // Clear the form
-                eventForm.classList.add('hidden'); // Hide the form
-            } else {
-                alert('Please fill out all fields.');
-            }
-        });
-    }
 </script>
+
+<style>
+    .event-list {
+        margin-top: 1rem;
+        padding: 0;
+        list-style: none;
+    }
+
+    .event-list li {
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+    }
+</style>
