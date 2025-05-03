@@ -52,6 +52,7 @@
     text-align: center; /* Center the text */
     font-weight: bold; /* Make the text bold */
     color: black; /* Ensure the text is visible */
+    font-size: 2rem; /* Adjust font size for visibility */
 }
 
 .image-box p.category-title {

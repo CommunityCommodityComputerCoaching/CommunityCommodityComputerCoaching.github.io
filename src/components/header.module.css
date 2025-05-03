@@ -19,7 +19,6 @@
     z-index: 1; /* Ensure it appears above the background */
     box-sizing: border-box; /* Include padding in width and height calculations */
     border-radius: .938rem; /* Add rounded corners */
-    display: flex; /* Enable flexbox for content alignment */
     flex-direction: column; /* Stack content vertically */
     justify-content: space-between; /* Distribute space evenly */
     align-items: flex-start; /* Align content to the left */
@@ -31,6 +30,7 @@
     flex-direction: column;
     gap: .625rem; /* Add spacing between elements */
     height: auto; /* Adjust height to content */
+    overflow: hidden; /* Prevent content from overflowing */
   }
 
   .contentContainer p {
@@ -73,7 +73,7 @@
       left: 2%;
       bottom: 2%;
       width: 96%;
-      height: 40%; /* Changed to auto */
+      height: 50%; /* Changed to auto */
     }
 
     .contentContainer h2 {
