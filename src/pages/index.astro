@@ -5,13 +5,158 @@ import Cta from "@components/cta.astro";
 import Hero from "@components/hero.astro";
 import Logos from "@components/logos.astro";
 import Layout from "@layouts/Layout.astro";
+
 ---
 
 <Layout title="">
   <Container>
     <Hero />
-    <!-- <Features />
-    <Logos />
-    <Cta /> -->
+    <h3 class="info-blurb">What We Provide</h3>
+    <hr class="separator" />
+    <div class="image-container">
+      <div class="image-box">
+        <img src="../../public/rentals.jpg" alt="Rental Services" />
+        <p class="category-title">Chromebook Rental</p>
+        <p class="category-blurb">
+          Rent up to 50 chromebooks for an event.
+        </br/>We can deliver and pick up them up!
+        </p>
+        <div class="button-container">
+          <a href="/forms" class="button-link">
+            <button>Rent Chromebooks</button>
+          </a>
+        </div>
+      </div>
+      <div class="image-box">
+        <img src="../../public/sales.jpg" alt="Sales Services" />
+        <p class="category-title">Chromebook Sales</p>
+        <p class="category-blurb">
+          Purchase a fresh, factory reset chromebook.
+        </p>
+        <br/>
+        <div class="button-container" style="padding-top: 1.10rem;">
+          <a href="/forms" class="button-link">
+            <button>Purchase a Chromebook</button>
+          </a>
+        </div>
+      </div>
+      <div class="image-box">
+        <img src="../../public/training.jpg" alt="Training Services" />
+        <p class="category-title">Digital literacy training</p>
+        <p class="category-blurb">
+          We provide onsite training using our own <br/> equipment.
+        </p>
+        <div class="button-container">
+          <a href="/forms" class="button-link">
+            <button>Book a Training</button>
+          </a>
+        </div>
+      </div>
+    </div>
+    <br/>
   </Container>
 </Layout>
+
+<style>
+  .separator {
+    width: 100%; /* Full width of the screen */
+    height: 2px; /* Thickness of the line */
+    background-color: black; /* Solid black line */
+    margin: 20px 0; /* Add spacing above and below the line */
+  }
+
+  .image-container {
+    display: flex;
+    justify-content: center; /* Center the images horizontally */
+    gap: 8rem; /* Add 1rem spacing between the divs */
+    margin-top: 20px; /* Add spacing above the image container */
+  }
+
+  .image-box {
+    flex: 0 1 auto; /* Allow the boxes to size based on their content */
+    text-align: center; /* Center the text and images inside each box */
+  }
+
+  .image-box img {
+    width: 100%; /* Make the images responsive */
+    max-width: 18.75rem; /* Limit the maximum width of the images */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Add rounded corners to the images */
+  }
+
+  .image-box p {
+    margin-top: 10px; /* Add spacing above the text */
+    font-size: 1rem; /* Adjust font size for visibility */
+    font-weight: bold; /* Make the text bold */
+    color: black; /* Ensure the text is visible */
+  }
+
+  .info-blurb {
+    font-size: 4rem; /* Adjust font size for visibility */
+    margin: 20px 0; /* Add spacing above and below */
+    text-align: center; /* Center the text */
+    font-weight: bold; /* Make the text bold */
+    color: black; /* Ensure the text is visible */
+  }
+
+  .image-box p.category-title {
+    font-size: 1.5rem; /* Adjust font size for visibility */
+    margin: 10px 0; /* Add spacing above and below */
+    text-align: left; /* Center the text */
+    font-weight: bold; /* Make the text bold */
+    color: black; /* Ensure the text is visible */
+  }
+
+  .image-box p.category-blurb {
+    font-size: 1rem; /* Adjust font size for visibility */
+    margin: 0; /* Add spacing above and below */
+    text-align: left; /* Align the text to the left */
+    font-weight: normal; /* Use normal font weight */
+    color: black; /* Ensure the text is visible */
+    white-space: nowrap; /* Prevent text from wrapping to the next line */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Add ellipsis (...) for overflowing text */
+  }
+
+  
+  .button-container {
+    display: flex;
+    gap: 10px; /* Add spacing between the buttons */
+    margin-top: auto; /* Push the buttons down */
+    align-self: flex-start; /* Align buttons to the left */
+    margin-top: 40px; /* Add spacing between the last <p> and the buttons */
+  }
+
+  .button-container button {
+    padding: 10px 40px;
+    font-size: 1rem;
+    color: white;
+    background-color: #007BFF; /* Blue background */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: bottom;
+    transition: background-color 0.3s ease;
+  }
+
+  .button-container button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+
+  .button-link {
+    display: inline-block; /* Make the link behave like a button */
+    font-size: 1rem;
+    color: white;
+    background-color: #007BFF; /* Blue background */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none; /* Remove underline */
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .button-link:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+</style>

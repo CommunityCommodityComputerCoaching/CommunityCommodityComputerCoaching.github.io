@@ -1,6 +1,6 @@
 <style>
   .hero-section {
-    background-image: url("../assets/home-hero.jpg");
+    background-image: url("../../public/home-hero.jpg"); /* Path to your image */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -71,15 +71,24 @@
     background-color: #0056b3; /* Darker blue on hover */
   }
 
-  .info-blurb {
-    font-size: 5rem; /* Adjust font size for visibility */
-    margin: 20px 0; /* Add spacing above and below */
-    text-align: center; /* Center the text */
-    font-weight: bold; /* Make the text bold */
-    color: black; /* Ensure the text is visible */
+  .button-link {
+    display: inline-block; /* Make the link behave like a button */
+    font-size: 1rem;
+    color: white;
+    background-color: #007BFF; /* Blue background */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none; /* Remove underline */
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
   }
-</style>
 
+  .button-link:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+
+</style>
 <main class="w-full">
   <section class="hero-section w-full flex flex-col justify-center items-center text-center">
     <div class="white-overlay">
@@ -88,11 +97,14 @@
         <h2>Improving digital literacy.</h2>
         <p>We provide education and resources for protecting yourself online through training.</p>
         <div class="button-container">
-          <button>Learn More</button>
-          <button>Get Started</button>
+          <a href="/mission" class="button-link">
+            <button>Learn More</button>
+          </a>
+          <a href="/forms" class="button-link">
+            <button>Get Started</button>
+          </a>
         </div>
       </div>
     </div>
   </section>
-  <h3 class="info-blurb">What We Provide</h3>
 </main>
