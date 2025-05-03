@@ -3,7 +3,7 @@
 ## TOC
 1. [About us](#empowering-communities-with-compassionate-tech-solutions)
 2. [Adding to Documentation](#adding-to-documentation)
-3 [Adding to team pages](#adding-members-to-the-about-team-page)
+3. [Adding to team pages](#adding-members-to-the-about-team-page)
 <!-- TODO: 5. [Contributing Guidlines](#contributing) -->
 4. [Installation](#installation) 
     1. [From the repo](#1-clone-the-repo)
