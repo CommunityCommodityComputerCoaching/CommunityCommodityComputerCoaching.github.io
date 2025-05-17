@@ -7,7 +7,7 @@
     position: relative; /* Make the section a positioning context */
   }
 
-  .whiteOverlay {
+.whiteOverlay {
     position: absolute;
     top: 5%; /* Adjust for padding */
     left: 5%; /* Adjust for padding */
@@ -22,112 +22,32 @@
     flex-direction: column; /* Stack content vertically */
     justify-content: space-between; /* Distribute space evenly */
     align-items: flex-start; /* Align content to the left */
-  }
+}
 
-  .contentContainer {
+.contentContainer {
     text-align: left; /* Ensure all text is left-aligned */
     display: flex;
     flex-direction: column;
     gap: .625rem; /* Add spacing between elements */
     height: auto; /* Adjust height to content */
     overflow: hidden; /* Prevent content from overflowing */
-  }
+}
 
-  .contentContainer p {
+.contentContainer p {
     font-size: 1rem; /* Adjust font size for visibility */
     margin: 0; /* Remove default margin */
     line-height: 1.5; /* Adjust line height for readability */
     color: black; /* Ensure text is visible on the white background */
-  }
+}
 
-  .contentContainer h2 {
+.contentContainer h2 {
     font-size: 2rem; /* Make the font larger */
     font-weight: bold; /* Make the text bold */
     margin: .625rem 0; /* Add spacing above and below */
     color: black; /* Ensure the text is visible */
-  }
+}
 
-  @media (max-width: 768px) {
-    .whiteOverlay {
-      padding: 3%;
-      top: 3%;
-      left: 3%;
-      bottom: 3%;
-      width: 94%;
-      height: fit-content; /* Changed to auto */
-    }
-
-    .contentContainer h2 {
-      font-size: 1.5rem;
-    }
-
-    .contentContainer p {
-      font-size: 0.9rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .whiteOverlay {
-      padding: 2%;
-      top: 2%;
-      left: 2%;
-      bottom: 3%;
-      width: 96%;
-      height: fit-content; /* Changed to auto */
-    }
-
-    .contentContainer h2 {
-      font-size: 1.2rem;
-    }
-
-    .contentContainer p {
-      font-size: 0.8rem;
-    }
-  }
-
-  .buttonContainer {
-    display: flex;
-    gap: .625rem; /* Add spacing between the buttons */
-    align-self: flex-start; /* Align buttons to the left */
-  }
-
-  .buttonContainer button {
-    padding: .625rem 2.5rem;
-    font-size: 1rem;
-    color: white;
-    background-color: #007BFF; /* Blue background */
-    border: none;
-    border-radius: .313rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-
-  .buttonContainer button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-  }
-
-  /* Responsive styles for buttons */
-  @media (max-width: 768px) {
-      .buttonContainer button {
-          padding: .5rem 1.5rem; /* Reduce padding */
-          font-size: 0.875rem; /* Reduce font size */
-      }
-  }
-
-  @media (max-width: 480px) {
-      .buttonContainer {
-          flex-direction: row; /* Stack buttons vertically */
-          gap: .5rem; /* Adjust spacing between buttons */
-      }
-
-      .buttonContainer button {
-          width: 100%; /* Make buttons full width */
-          padding: .5rem; /* Adjust padding */
-          font-size: 0.75rem; /* Further reduce font size */
-      }
-  }
-
-  .buttonLink {
+.buttonLink {
     display: inline-block; /* Make the link behave like a button */
     font-size: 1rem;
     color: white;
@@ -138,8 +58,84 @@
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
-  }
+}
 
-  .buttonLink:hover {
+.buttonLink:hover {
     background-color: #0056b3; /* Darker blue on hover */
-  }
+}
+
+.buttonContainer {
+    display: flex;
+    gap: .625rem; /* Add spacing between the buttons */
+    align-self: flex-start; /* Align buttons to the left */
+}
+
+.buttonContainer button {
+    padding: .625rem 2.5rem;
+    font-size: 1rem;
+    color: white;
+    background-color: #007BFF; /* Blue background */
+    border: none;
+    border-radius: .313rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buttonContainer button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Responsive styles for buttons */
+@media (max-width: 768px) or (max-height: 1000px){
+    .buttonContainer button {
+        padding: .5rem 1.5rem; /* Reduce padding */
+        font-size: 0.875rem; /* Reduce font size */
+    }
+
+    .whiteOverlay {
+        padding: 3%;
+        top: 3%;
+        left: 3%;
+        bottom: 3%;
+        width: 94%;
+        height: fit-content; /* Changed to auto */
+    }
+
+    .contentContainer h2 {
+        font-size: 1.5rem;
+    }
+
+    .contentContainer p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .buttonContainer {
+        flex-direction: row; /* Stack buttons vertically */
+        gap: .5rem; /* Adjust spacing between buttons */
+    }
+
+    .buttonContainer button {
+        width: 100%; /* Make buttons full width */
+        padding: .5rem; /* Adjust padding */
+        font-size: 0.75rem; /* Further reduce font size */
+    }
+
+    .whiteOverlay {
+        padding: 2%;
+        top: 2%;
+        left: 2%;
+        bottom: 3%;
+        width: 96%;
+        height: fit-content; /* Changed to auto */
+    }
+
+    .contentContainer h2 {
+        font-size: 1.2rem;
+    }
+
+    .contentContainer p {
+        font-size: 0.8rem;
+    }
+}
